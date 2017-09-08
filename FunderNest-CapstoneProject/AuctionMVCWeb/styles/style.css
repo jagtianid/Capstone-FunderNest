@@ -1,0 +1,147 @@
+
+body
+{
+	background-color:#efefef;
+	font-family:Arial;
+	margin-top:0;
+	font-size:small;
+}
+td
+{
+	text-align:left;
+	font-family:Arial;
+	font-size:small;
+}
+
+a
+{
+	color:#A00754;
+}
+
+heading
+{	
+	color: #ffffff;
+}
+
+div#AuctionImageContainer 
+{ 
+	padding-top:20px;
+	width: 470px; 
+}
+
+img.AuctionImage  
+{
+	max-width: 100%;
+	height: auto;
+	padding:20px;
+}
+
+.PageLayout
+{
+	background-color:#ffffff;
+	width:790px;	
+	margin-left:auto;
+	margin-right:auto;
+	padding: 0 10px 10px 10px;
+}
+
+
+
+.HelpLink
+{
+	position:absolute;z-index:5;margin-left:660px;margin-top:5px;
+}
+.HelpLinkImage
+{
+	border:0;
+}
+.BannerImage
+{
+	border:0;
+    
+}
+
+
+.SubHeading
+{
+	width:790px;
+	background-color:#ffffff;
+	color:#000000;
+	text-align:left;
+	padding: 5px 0 15px 0;
+}
+
+
+.AuctionList
+{
+	border:0;
+	width:790px;
+	border-spacing:0;
+    border-collapse:collapse;	
+}
+.AuctionList td
+{
+	padding:5px;
+}
+
+
+.AuctionItem
+{
+	margin:20px 0;
+	border:0;
+	width:790px;
+	border-spacing:0;
+    border-collapse:collapse;	
+ 
+}
+.AuctionItem td
+{
+	padding:4px;
+}
+
+
+.ThemeColor {
+    background-color: #ff8641;
+    color: #090909;
+}
+
+.ThemeColor a
+{
+	color: #ffffff;
+}
+
+.ThemeColorAlt
+{	
+	background-color: #ffffff;
+}
+
+.ThemeColorAlt2
+{
+	background-color: #efefef;
+}
+
+
+.MoneyRaised
+{
+	margin:20px 0;
+	font-size:medium;
+	text-align:center;
+}
+
+
+h1{
+color: deeppink;
+padding-left:186px;
+}
+
+a {
+   font-size: 16px;
+}
+
+h3{
+    color:hotpink;
+}
+
+#txtName {
+   padding-left: 168px;
+}
