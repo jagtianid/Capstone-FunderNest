@@ -49,7 +49,7 @@ namespace AuctionMVCWeb.CharityAuction
             if (FileUpload1.HasFile)
             {
                 filename = Guid.NewGuid() + FileUpload1.FileName.Substring(FileUpload1.FileName.LastIndexOf("."));
-                FileUpload1.SaveAs(Server.MapPath("~/auction_pictures/" + filename));
+                FileUpload1.SaveAs(Server.MapPath("~/images/" + filename));
             }
 
             using (SqlConnection conn = new SqlConnection(Common.ConnectionString))
