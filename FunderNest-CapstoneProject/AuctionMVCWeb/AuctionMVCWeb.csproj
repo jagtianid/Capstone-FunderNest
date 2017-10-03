@@ -183,13 +183,6 @@
     <Compile Include="Controllers\DementiaHackathonController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="default.aspx.cs">
-      <DependentUpon>default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="default.aspx.designer.cs">
-      <DependentUpon>default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -246,14 +239,10 @@
   <ItemGroup>
     <Content Include="AddAuction.aspx" />
     <Content Include="Auctions.aspx" />
-    <Content Include="auction_pictures\42e2c6b2-e3d7-42d9-80bf-05715b4becd3.jpg" />
-    <Content Include="auction_pictures\be78336e-d8c1-48d4-9cdc-78f2148a1620.jpg" />
-    <Content Include="auction_pictures\c8cc4288-ddf8-40d3-8be7-ee47f632d79c.jpg" />
     <Content Include="Category.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="database\auction.sql" />
-    <Content Include="default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Header.ascx" />
@@ -350,7 +339,6 @@
     <Content Include="Views\User\Register.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\User\LoggedIn.cshtml" />
-    <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\DementiaHackathon\addAuction.cshtml" />
     <None Include="Web References\com.paypal.sandbox.www\CoreComponentTypes.xsd">
       <SubType>Designer</SubType>

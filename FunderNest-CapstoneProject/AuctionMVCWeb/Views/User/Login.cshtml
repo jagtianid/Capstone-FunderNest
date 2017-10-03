@@ -3,16 +3,27 @@
 @{
     ViewBag.Title = "Login";
 }
+<style>
+    h2{
+margin-left: 98px;
+    }
+</style>
+<a href="/Home/Index">
+
+    <h2 align="center">
+        <img src="~/images/FunderNestBanner.jpg" alt="FunderNest Banner">
+    </h2>
+</a>
+
 
 <h2>Login</h2>
 
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
+
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>UserInfo</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">

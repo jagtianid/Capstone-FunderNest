@@ -14,7 +14,6 @@ CREATE TABLE [dbo].[tbItems](
 	[item_date_open] [datetime] NOT NULL,
 	[item_date_close] [datetime] NOT NULL,
 	[item_seller] [varchar](50) NULL,
-	[item_location] [varchar](50) NULL,
 	[cat_id] [int] NULL,
 	[img] [varchar](50) NULL,
  CONSTRAINT [PK_tbItems] PRIMARY KEY CLUSTERED 
@@ -93,7 +92,7 @@ SELECT   	i.item_id,
 		i.item_date_open,
 		i.item_date_close,
 		i.item_seller,
-		i.item_location,
+	
                           (SELECT     TOP 1 item_amount
                             FROM         dbo. tbBids
                             WHERE      tbBids.item_id = i.item_id
@@ -123,7 +122,6 @@ SELECT   	i.item_id,
 		i.item_date_open,
 		i.item_date_close,
 		i.item_seller,
-		i.item_location,
                           (SELECT     TOP 1 item_amount
                             FROM         dbo. tbBids
                             WHERE      tbBids.item_id = i.item_id
@@ -189,7 +187,6 @@ SELECT     	item_name,
 		item_description,
 		item_date_close,
 		item_seller,
-		item_location,
 
                           (SELECT     TOP 1 item_amount
                             FROM          tbBids
@@ -295,15 +292,14 @@ CREATE PROCEDURE [dbo].[spAddAuction]
 @description varchar(1000),
 @closedate datetime,
 @seller varchar(100),
-@location varchar(100),
 @cat int,
 @img varchar(50)
 
 AS
 
 INSERT INTO tbItems
-                      (item_name, item_description, item_date_open, item_date_close, item_seller, item_location, cat_id, img)
-VALUES     (@name, @description, GETDATE(), @closedate, @seller, @location,@cat, @img)
+                      (item_name, item_description, item_date_open, item_date_close, item_seller, cat_id, img)
+VALUES     (@name, @description, GETDATE(), @closedate, @seller, @cat, @img)
 GO
 /****** Object:  StoredProcedure [dbo].[spTotalRaised]    Script Date: 04/08/2015 11:01:13 ******/
 SET ANSI_NULLS OFF

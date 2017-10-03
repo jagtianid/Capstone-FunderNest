@@ -186,7 +186,6 @@ namespace SoftwareSolutions.CharityAuction
                             item.DateOpen = DateTime.Parse(dr["item_date_open"].ToString());
                             item.DateClose = DateTime.Parse(dr["item_date_close"].ToString());
                             item.Seller = dr["item_seller"].ToString();
-                            item.Location = dr["item_location"].ToString();
                             if(dr["item_amount"].ToString().Equals(string.Empty))
                                 item.BidAmount = 0;
                             else

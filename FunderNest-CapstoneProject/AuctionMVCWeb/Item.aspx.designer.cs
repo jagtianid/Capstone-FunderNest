@@ -94,15 +94,6 @@ namespace AuctionMVCWeb.CharityAuction {
         protected global::System.Web.UI.WebControls.Label lblHighBidder;
         
         /// <summary>
-        /// lblLocation control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLocation;
-        
-        /// <summary>
         /// litUpdate control.
         /// </summary>
         /// <remarks>

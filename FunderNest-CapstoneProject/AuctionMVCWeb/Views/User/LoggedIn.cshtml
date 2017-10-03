@@ -5,6 +5,10 @@
 
 @if (Session["Id"] != null)
 {
-    <h4>Hello @Session["FName"].ToString()</h4>
+    <h2 align="center">Hello @Session["FName"].ToString(), what would you like to do? </h2>
+    <br />
+    <h4 align="center"><a align="center" href="~/AddAuction.aspx">Add an item to donate</a></h4>
+    <br />
+    <h4 align="center"><a href="~/auctions.aspx">Bid Now!</a></h4>
 }
 

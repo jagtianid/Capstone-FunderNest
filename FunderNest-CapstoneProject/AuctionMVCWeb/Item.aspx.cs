@@ -31,13 +31,13 @@ namespace AuctionMVCWeb.CharityAuction
 
                 if (lblEndTime.Text.Contains("Ended"))
                 {
-                    litUpdate.Text = "<p>Bidding on this item has finished.  I'm sorry you was too late!</p>";
+                    litUpdate.Text = "<p>Bidding on this item has finished. We're sorry!</p>";
                 }
                 else
                 {
                     if (lblCurrentBid.Text.Equals("<b>No bids</b>"))
                     {
-                        litUpdate.Text = "<p>Bidding on this item start at 1p, <b>Good luck!</b></p>";
+                        litUpdate.Text = "<p>Bidding on this item start at 1pm, <b>Good luck!</b></p>";
                     }
                     else
                     {
@@ -121,8 +121,7 @@ namespace AuctionMVCWeb.CharityAuction
                                 lnkBids.NavigateUrl = "History.aspx?i=" + lbItemId.Text;
                             if (lblHighBidder.Text == "<b></b>")
                                 lblHighBidder.Text = "<b>None</b>";
-                            lblLocation.Text = "<b>" + rdr["item_location"].ToString() + "</b>";
-                            if (lblLocation.Text == "<b></b>") lblLocation.Text = "<b>Not specified</b>";
+                     
                             if (lblDescription.Text == "")
                                 lblDescription.Text = "No description";
 

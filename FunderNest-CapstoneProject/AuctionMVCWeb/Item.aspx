@@ -48,13 +48,6 @@
                             <a href="/User/Register">Create Account</a>
                         </li>
 
-                        <li>
-                            <a href="/DementiaHackathon/auction">Auction</a>
-                        </li>
-
-                        <li>
-                            <a href="/DementiaHackathon/addAuction">Add Item for Auction</a>
-                        </li>
                 </ul>
 
             </div>
@@ -111,12 +104,7 @@
                                     <asp:Label ID="lblHighBidder" runat="server"></asp:Label>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>Location:</td>
-                                <td>
-                                    <asp:Label ID="lblLocation" runat="server"></asp:Label>
-                                </td>
-                            </tr>
+                           
                         </table>
 
                     </td>

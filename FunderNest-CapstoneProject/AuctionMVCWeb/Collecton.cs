@@ -46,7 +46,6 @@ namespace SoftwareSolutions
         private DateTime _DateOpen;
         private DateTime _DateClose;
         private string _Seller;
-        private string _Location;
         private string _Buyer;
         private decimal _BidAmount;
         private int _BidNumber;
@@ -83,11 +82,7 @@ namespace SoftwareSolutions
             get { return _Seller; }
             set { _Seller = value; }
         }
-        public string Location
-        {
-            get { return _Location; }
-            set { _Location = value; }
-        }
+       
         public string Buyer
         {
             get { return _Buyer; }

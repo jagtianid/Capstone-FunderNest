@@ -17,7 +17,7 @@ namespace AuctionMVCWeb.CharityAuction
             {
                 Calendar1.SelectedDate = DateTime.Now;
                 Calendar1.VisibleDate = DateTime.Now;
-                
+
                 using (SqlConnection conn = new SqlConnection(Common.ConnectionString))
                 {
 
@@ -30,9 +30,9 @@ namespace AuctionMVCWeb.CharityAuction
                         {
 
                             while (rdr.Read())
-                            {
-                                DropDownList1.Items.Add(new ListItem(rdr["cat_name"].ToString(), rdr["cat_id"].ToString()));
-                            }
+                             {
+                                 DropDownList1.Items.Add(new ListItem(rdr["cat_name"].ToString(), rdr["cat_id"].ToString()));
+                              }
 
                         }
                     }
@@ -45,13 +45,13 @@ namespace AuctionMVCWeb.CharityAuction
         {
 
             string filename = "";
-            
+
             if (FileUpload1.HasFile)
             {
                 filename = Guid.NewGuid() + FileUpload1.FileName.Substring(FileUpload1.FileName.LastIndexOf("."));
-                FileUpload1.SaveAs(Server.MapPath("~/auction_pictures/"+filename));
+                FileUpload1.SaveAs(Server.MapPath("~/auction_pictures/" + filename));
             }
-            
+
             using (SqlConnection conn = new SqlConnection(Common.ConnectionString))
             {
 
@@ -59,11 +59,10 @@ namespace AuctionMVCWeb.CharityAuction
                 using (SqlCommand cmd = new SqlCommand("spAddAuction", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@name", txtName1.Text));
+                    cmd.Parameters.Add(new SqlParameter("@name", txtName.Text));
                     cmd.Parameters.Add(new SqlParameter("@description", txtDescription.Text));
                     cmd.Parameters.Add(new SqlParameter("@closedate", Calendar1.SelectedDate.ToLongDateString() + " " + txtTime.Text));
                     cmd.Parameters.Add(new SqlParameter("@seller", txtSeller.Text));
-                    cmd.Parameters.Add(new SqlParameter("@location", txtLocation.Text));
                     cmd.Parameters.Add(new SqlParameter("@cat", DropDownList1.SelectedValue.ToString()));
                     cmd.Parameters.Add(new SqlParameter("@img", filename));
 
@@ -75,8 +74,7 @@ namespace AuctionMVCWeb.CharityAuction
                  "<h5>Auction added</h5>";
 
             txtDescription.Enabled = false;
-            txtName1.Enabled = false;
-            txtLocation.Enabled = false;
+            txtName.Enabled = false;
             txtSeller.Enabled = false;
             txtTime.Enabled = false;
             Calendar1.Enabled = false;
@@ -84,5 +82,14 @@ namespace AuctionMVCWeb.CharityAuction
             Button1.Enabled = false;
         }
 
+        protected void txtDescription_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
