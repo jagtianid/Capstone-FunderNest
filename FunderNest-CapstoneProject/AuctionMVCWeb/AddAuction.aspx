@@ -49,6 +49,13 @@
                         <a href="/User/Register">Create Account</a>
                     </li>
 
+                     <li>
+                        <a href="/DementiaHackathon/auction">Place Bid</a>
+                    </li>
+                     <li>
+                        <a href="/DementiaHackathon/addAuction">Add Item to Donate</a>
+                    </li>
+
                 </ul>
 
             </div>
@@ -71,9 +78,9 @@
 					<TD style="HEIGHT: 27px">  
                         <h3>Item Name</h3>
 
-						<asp:TextBox id="txtName" runat="server" Width="408px"></asp:TextBox>
+						<asp:TextBox id="txtName1" runat="server" Width="408px"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                            ControlToValidate="txtName" ErrorMessage="Missing name"></asp:RequiredFieldValidator>
+                            ControlToValidate="txtName1" ErrorMessage="Missing name"></asp:RequiredFieldValidator>
                     </TD>
 				</TR>
 				<TR>
@@ -101,10 +108,9 @@
 					<TD>
                                                                         <h3>Category</h3>
 
-                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource" DataTextField="cat_name" DataValueField="cat_name">
-                        </asp:DropDownList>
-                                                                        <asp:SqlDataSource ID="SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:auctionConnectionString %>" SelectCommand="SELECT [cat_name] FROM [tbCategories]"></asp:SqlDataSource>
-                    </TD>
+                        <asp:DropDownList ID="DropDownList1" runat="server">
+                        </asp:DropDownList></TD>
+                    
 				</TR>
                 <TR>
                     <td>

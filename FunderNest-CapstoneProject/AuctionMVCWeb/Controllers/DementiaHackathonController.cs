@@ -24,5 +24,10 @@ namespace Capstone_Project_Prototype.Controllers
             return View();
         }
 
+        public RedirectResult RedirectToAspx()
+        {
+            return Redirect("/pages/index.aspx");
+        }
+
     }
 }

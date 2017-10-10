@@ -9,6 +9,8 @@ namespace AuctionMVCWeb.Controllers
 {
     public class UserController : Controller
     {
+
+        private dbContext db = new dbContext();
         // GET: User
         public ActionResult Index()
         {

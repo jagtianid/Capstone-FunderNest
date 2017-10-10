@@ -59,7 +59,7 @@ namespace AuctionMVCWeb.CharityAuction
                 using (SqlCommand cmd = new SqlCommand("spAddAuction", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@name", txtName.Text));
+                    cmd.Parameters.Add(new SqlParameter("@name", txtName1.Text));
                     cmd.Parameters.Add(new SqlParameter("@description", txtDescription.Text));
                     cmd.Parameters.Add(new SqlParameter("@closedate", Calendar1.SelectedDate.ToLongDateString() + " " + txtTime.Text));
                     cmd.Parameters.Add(new SqlParameter("@seller", txtSeller.Text));
@@ -74,7 +74,7 @@ namespace AuctionMVCWeb.CharityAuction
                  "<h5>Auction added</h5>";
 
             txtDescription.Enabled = false;
-            txtName.Enabled = false;
+            txtName1.Enabled = false;
             txtSeller.Enabled = false;
             txtTime.Enabled = false;
             Calendar1.Enabled = false;

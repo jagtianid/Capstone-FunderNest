@@ -2,7 +2,7 @@
 
 <%@ OutputCache Duration="1" VaryByParam="c" %>
 <%@ Register Src="Header.ascx" TagName="Header" TagPrefix="uc2" %>
-           <!--     <uc2:Header ID="Header2" runat="server" EnableViewState="false" />-->
+<!--     <uc2:Header ID="Header2" runat="server" EnableViewState="false" />-->
 
 
 
@@ -52,6 +52,14 @@
                     <li>
                         <a href="/User/Register">Create Account</a>
                     </li>
+
+                    <li>
+                        <a href="/DementiaHackathon/auction">Place Bid</a>
+                    </li>
+                    <li>
+                        <a href="/DementiaHackathon/addAuction">Add Item to Donate</a>
+                    </li>
+
                 </ul>
 
             </div>
@@ -65,7 +73,7 @@
                 <uc2:Header ID="Header1" runat="server" EnableViewState="false" />
 
                 <td>
-                 <h2> Welcome to the Auction Page 
+                    <h2>Welcome to the Auction Page 
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
                         <input type="hidden" name="cmd" value="_xclick">
                         <input type="hidden" name="business" value="divjag-facilitator@hotmail.com">
@@ -75,7 +83,7 @@
                         <input type="hidden" name="currency_code" value="CAD">
                         <input type="hidden" name="button_subtype" value="products">
                         <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted">
-                        <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif"  alt="PayPal Icon"
+                        <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" alt="PayPal Icon"
                             border="0" name="submit" align="right" alt="PayPal - The safer, easier way to pay online!">
                         <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
                     </form>

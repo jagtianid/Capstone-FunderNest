@@ -10,19 +10,20 @@
     <link href="styles/style.css" rel="stylesheet" type="text/css" />
 
     <link href="Content/css" rel="stylesheet" type="text/css" />
-<link href="bundles/modernizr" rel="stylesheet" type="text/css" />
-<link href="bundles/jquery" rel="stylesheet" type="text/css" />
-<link href="bundles/bootstrap" rel="stylesheet" type="text/css" />
+    <link href="bundles/modernizr" rel="stylesheet" type="text/css" />
+    <link href="bundles/jquery" rel="stylesheet" type="text/css" />
+    <link href="bundles/bootstrap" rel="stylesheet" type="text/css" />
 
 
     <script type="text/javascript">
         function noenter() {
-          return !(window.event && window.event.keyCode == 13); }
+            return !(window.event && window.event.keyCode == 13);
+        }
     </script>
 </head>
 <body>
 
-     <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -48,6 +49,12 @@
                             <a href="/User/Register">Create Account</a>
                         </li>
 
+                        <li>
+                            <a href="/DementiaHackathon/auction">Place Bid</a>
+                        </li>
+                        <li>
+                            <a href="/DementiaHackathon/addAuction">Add Item to Donate</a>
+                        </li>
                 </ul>
 
             </div>
@@ -104,7 +111,7 @@
                                     <asp:Label ID="lblHighBidder" runat="server"></asp:Label>
                                 </td>
                             </tr>
-                           
+
                         </table>
 
                     </td>
@@ -169,7 +176,7 @@
                 </tr>
             </table>
 
-          
+
 
         </form>
 
