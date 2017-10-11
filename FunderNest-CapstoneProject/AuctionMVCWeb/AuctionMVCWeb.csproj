@@ -239,12 +239,6 @@
   <ItemGroup>
     <Content Include="AddAuction.aspx" />
     <Content Include="Auctions.aspx" />
-    <Content Include="auction_pictures\0f731120-d0aa-4962-8a2a-82408ea06056.jpg" />
-    <Content Include="auction_pictures\32f86ce0-41d3-48b1-ab87-bbd9a605c6b7.jpg" />
-    <Content Include="auction_pictures\42e2c6b2-e3d7-42d9-80bf-05715b4becd3.jpg" />
-    <Content Include="auction_pictures\be78336e-d8c1-48d4-9cdc-78f2148a1620.jpg" />
-    <Content Include="auction_pictures\c8cc4288-ddf8-40d3-8be7-ee47f632d79c.jpg" />
-    <Content Include="auction_pictures\d7033c1d-4256-4850-ad20-2fbf7864d29b.jpg" />
     <Content Include="Category.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -496,7 +490,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="NewFolder1\" />
+    <Folder Include="auction_pictures\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
