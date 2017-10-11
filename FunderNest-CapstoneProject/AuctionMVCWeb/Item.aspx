@@ -23,6 +23,8 @@
 </head>
 <body>
 
+
+
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -46,14 +48,15 @@
                         </li>
 
                         <li>
-                            <a href="/User/Register">Create Account</a>
+                            <a href="/User/Register">Register</a>
                         </li>
 
                         <li>
-                            <a href="/DementiaHackathon/auction">Place Bid</a>
+                            <a href="/DementiaHackathon/auction">Auction</a>
                         </li>
+
                         <li>
-                            <a href="/DementiaHackathon/addAuction">Add Item to Donate</a>
+                            <a href="/DementiaHackathon/addAuction">Add Item for Auction</a>
                         </li>
                 </ul>
 
@@ -111,7 +114,7 @@
                                     <asp:Label ID="lblHighBidder" runat="server"></asp:Label>
                                 </td>
                             </tr>
-
+                           
                         </table>
 
                     </td>

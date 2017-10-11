@@ -239,6 +239,12 @@
   <ItemGroup>
     <Content Include="AddAuction.aspx" />
     <Content Include="Auctions.aspx" />
+    <Content Include="auction_pictures\0f731120-d0aa-4962-8a2a-82408ea06056.jpg" />
+    <Content Include="auction_pictures\32f86ce0-41d3-48b1-ab87-bbd9a605c6b7.jpg" />
+    <Content Include="auction_pictures\42e2c6b2-e3d7-42d9-80bf-05715b4becd3.jpg" />
+    <Content Include="auction_pictures\be78336e-d8c1-48d4-9cdc-78f2148a1620.jpg" />
+    <Content Include="auction_pictures\c8cc4288-ddf8-40d3-8be7-ee47f632d79c.jpg" />
+    <Content Include="auction_pictures\d7033c1d-4256-4850-ad20-2fbf7864d29b.jpg" />
     <Content Include="Category.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -248,6 +254,8 @@
     <Content Include="Header.ascx" />
     <Content Include="History.aspx" />
     <Content Include="images\FunderNestBanner.jpg" />
+    <Content Include="images\mainpage\hackimage.jpg" />
+    <Content Include="images\mainpage\hackimage1.jpg" />
     <Content Include="index.htm" />
     <Content Include="Item.aspx" />
     <Content Include="PDT\PDTStart.aspx" />
@@ -258,6 +266,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="images\vssver2.scc" />
     <None Include="Properties\PublishProfiles\fundernest - Web Deploy.pubxml">
       <SubType>Designer</SubType>
     </None>
@@ -277,6 +286,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="styles\style.css" />
+    <Content Include="styles\styleMain.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -486,7 +496,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="auction_pictures\" />
     <Folder Include="NewFolder1\" />
   </ItemGroup>
   <ItemGroup>

@@ -11,11 +11,15 @@ using SoftwareSolutions;
 
 namespace AuctionMVCWeb.CharityAuction
 {
-	public partial class Item : System.Web.UI.Page
-	{
+    /// <summary>
+    /// Summary description for pgItem.
+    /// </summary>
+    public partial class Item : System.Web.UI.Page
+    {
 
         protected void Page_Load(object sender, System.EventArgs e)
         {
+            // Put user code to initialize the page here
             if (!IsPostBack)
             {
                 lbItemId.Text = Request.QueryString["i"].ToString();
@@ -31,13 +35,13 @@ namespace AuctionMVCWeb.CharityAuction
 
                 if (lblEndTime.Text.Contains("Ended"))
                 {
-                    litUpdate.Text = "<p>Bidding on this item has finished. We're sorry!</p>";
+                    litUpdate.Text = "<p>Bidding on this item has finished.  I'm sorry you was too late!</p>";
                 }
                 else
                 {
                     if (lblCurrentBid.Text.Equals("<b>No bids</b>"))
                     {
-                        litUpdate.Text = "<p>Bidding on this item start at 1pm, <b>Good luck!</b></p>";
+                        litUpdate.Text = "<p>Bidding on this item start at 1p, <b>Good luck!</b></p>";
                     }
                     else
                     {
@@ -48,54 +52,59 @@ namespace AuctionMVCWeb.CharityAuction
             }
         }
 
-        public string FormatAmount (string x)
-		{
-			if(x=="")
-				return "No bids";
-			else
-			{
-			
-				decimal d = (decimal)Convert.ToDecimal(x);
-				string s =String.Format("{0:F2}", d); 
-				return "$ "+s;}
-		}
+        public string FormatAmount(string x)
+        {
+            if (x == "")
+                return "No bids";
+            else
+            {
 
-		public string FormatCountdown(string dtIn)
-		{
-			string returnvalue="";
-			DateTime dtCount = new DateTime();
-			dtCount = (DateTime)Convert.ToDateTime(dtIn);
+                decimal d = (decimal)Convert.ToDecimal(x);
+                string s = String.Format("{0:F2}", d); // "54.97"
+                return "$ " + s;
+            }
+        }
 
-			if (dtCount.Ticks>DateTime.Now.Ticks)
-			{
+        public string FormatCountdown(string dtIn)
+        {
+            string returnvalue = "";
+            //change end date to count down (disable all buttons if finished)
+            DateTime dtCount = new DateTime();
+            dtCount = (DateTime)Convert.ToDateTime(dtIn);
+            // int ticker = DateTime.Now.Ticks - dtCount.Ticks;
+            //Response.Write(ticker.ToString());
+
+            if (dtCount.Ticks > DateTime.Now.Ticks)
+            {
                 if ((dtCount.AddTicks(-DateTime.Now.Ticks).Month - 1) > 0) returnvalue += (dtCount.AddTicks(-DateTime.Now.Ticks).Month - 1) + "month(s) ";
-				
-				if((dtCount.AddTicks(-DateTime.Now.Ticks).Day-1)>0) returnvalue+=(dtCount.AddTicks(-DateTime.Now.Ticks).Day-1)+ "d ";
-				if(dtCount.AddTicks(-DateTime.Now.Ticks).Hour>0) returnvalue+=dtCount.AddTicks(-DateTime.Now.Ticks).Hour+ "h ";
-			
-				if(dtCount.AddTicks(-DateTime.Now.Ticks).Minute>0) 
-				{
-					returnvalue+=(dtCount.AddTicks(-DateTime.Now.Ticks).Minute)+ "m ";
-				}
 
-				if  (!((dtCount.AddTicks(-DateTime.Now.Ticks).Day-1)>0) &
-					(!(dtCount.AddTicks(-DateTime.Now.Ticks).Hour>0)) &
-					(!(dtCount.AddTicks(-DateTime.Now.Ticks).Minute>5)))
-					returnvalue+=dtCount.AddTicks(-DateTime.Now.Ticks).Second+ "s";
-			}
-			else
-			{
-				returnvalue = "<font color=red>Ended</font>";
-				btnBid.Enabled=false;
-				txtBid.Enabled=false;
-			}
-			
-			return returnvalue;
-		}
+                if ((dtCount.AddTicks(-DateTime.Now.Ticks).Day - 1) > 0) returnvalue += (dtCount.AddTicks(-DateTime.Now.Ticks).Day - 1) + "d ";
+                if (dtCount.AddTicks(-DateTime.Now.Ticks).Hour > 0) returnvalue += dtCount.AddTicks(-DateTime.Now.Ticks).Hour + "h ";
+
+                if (dtCount.AddTicks(-DateTime.Now.Ticks).Minute > 0)
+                {
+                    returnvalue += (dtCount.AddTicks(-DateTime.Now.Ticks).Minute) + "m ";
+                }
+
+                if (!((dtCount.AddTicks(-DateTime.Now.Ticks).Day - 1) > 0) &
+                    (!(dtCount.AddTicks(-DateTime.Now.Ticks).Hour > 0)) &
+                    (!(dtCount.AddTicks(-DateTime.Now.Ticks).Minute > 5)))
+                    returnvalue += dtCount.AddTicks(-DateTime.Now.Ticks).Second + "s";
+            }
+            else
+            {
+                //auction closed
+                returnvalue = "<font color=red>Ended</font>";
+                btnBid.Enabled = false;
+                txtBid.Enabled = false;
+            }
+
+            return returnvalue;
+        }
 
 
-		private void getItem()
-		{
+        private void getItem()
+        {
 
             using (SqlConnection conn = new SqlConnection(Common.ConnectionString))
             {
@@ -121,7 +130,6 @@ namespace AuctionMVCWeb.CharityAuction
                                 lnkBids.NavigateUrl = "History.aspx?i=" + lbItemId.Text;
                             if (lblHighBidder.Text == "<b></b>")
                                 lblHighBidder.Text = "<b>None</b>";
-                     
                             if (lblDescription.Text == "")
                                 lblDescription.Text = "No description";
 
@@ -137,63 +145,67 @@ namespace AuctionMVCWeb.CharityAuction
             }
 
 
-		}
-		
-		protected void btnBid_Click(object sender, System.EventArgs e)
-		{
-			string fullname = Common.GetFullName(Request.ServerVariables["AUTH_USER"].ToString());
+        }
+
+        protected void btnBid_Click(object sender, System.EventArgs e)
+        {
+            string fullname = Common.GetFullName(Request.ServerVariables["AUTH_USER"].ToString());
             decimal bidamount = Convert.ToDecimal(txtBid.Text.ToString());
 
-            if(bidamount>214500)
+            if (bidamount > 214500)
             {
                 litUpdate.Text = @"
                                 <p>
                                 <b>Your bid was rejected,</b> <br>
-                                Did you mean to bid $" +bidamount.ToString("0.00")+@" ?<br/>
-                                If so you have too much money!";                
+                                Did you mean to bid $" + bidamount.ToString("0.00") + @" ?<br/>
+                                If so you have too much money!";
 
             }
             else
             {
-            using (SqlConnection conn = new SqlConnection(Common.ConnectionString))
-            {
-                conn.Open();
-                using (SqlCommand cmd = new SqlCommand("spBid", conn))
+                using (SqlConnection conn = new SqlConnection(Common.ConnectionString))
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add(new SqlParameter("@item_id", lbItemId.Text));
-                    cmd.Parameters.Add(new SqlParameter("@amount", bidamount));
-                    cmd.Parameters.Add(new SqlParameter("@bidder", fullname));
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("spBid", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add(new SqlParameter("@item_id", lbItemId.Text));
+                        cmd.Parameters.Add(new SqlParameter("@amount", bidamount));
+                        cmd.Parameters.Add(new SqlParameter("@bidder", fullname));
 
-                    if (cmd.ExecuteScalar().Equals(1))
-                    {
-                        litUpdate.Text = "<p>You are currently the <b>highest bidder</b>, Good luck!</p>";
-                    }
-                    else
-                    {
-                        if (lblEndTime.Text.Contains("Ended"))
-                        { 
-                            litUpdate.Text = "<p>Bidding on this item has finished.  I'm sorry you was too late!</p>";
+                        if (cmd.ExecuteScalar().Equals(1))
+                        {
+                            //bid was a success
+                            litUpdate.Text = "<p>You are currently the <b>highest bidder</b>, Good luck!</p>";
                         }
+                        //was not a success    
                         else
                         {
-                            double newvalue = double.Parse(lblCurrentBid.Text.Replace("<b>$ ", "").Replace("</b>", "")) + 0.10;
-                            litUpdate.Text = @"
+                            //too late message.  ha to the last min snipper
+                            if (lblEndTime.Text.Contains("Ended"))
+                            {
+                                litUpdate.Text = "<p>Bidding on this item has finished.  I'm sorry you was too late!</p>";
+                            }
+                            //bid reject message
+                            else
+                            {
+                                double newvalue = double.Parse(lblCurrentBid.Text.Replace("<b>$ ", "").Replace("</b>", "")) + 0.10;
+                                litUpdate.Text = @"
                                 <p><b>Your bid was rejected,</b> <br>
                                 Bid amount was too low or someone else has out bid you.<br/>
                                 <br/>
-                                The minimum bid for this item is $ " +  newvalue.ToString("0.00") + ", Good luck!</p>";
+                                The minimum bid for this item is $ " + newvalue.ToString("0.00") + ", Good luck!</p>";
+
+                            }
 
                         }
-
                     }
                 }
             }
-            }
-			getItem();
+            getItem();
             txtBid.Text = "";
-            
-		}
+
+        }
 
         protected void LinkButton1_Click(object sender, System.EventArgs e)
         {
@@ -206,6 +218,7 @@ namespace AuctionMVCWeb.CharityAuction
             }
             else
             {
+                //auto populate next bid
                 if (lblCurrentBid.Text.Equals("<b>No bids</b>"))
                 {
                     litUpdate.Text = "<p>Bidding on this item start at 1p, <b>Good luck!</b></p>";
@@ -218,6 +231,6 @@ namespace AuctionMVCWeb.CharityAuction
             }
 
             txtBid.Text = "";
-        }      
-	}
+        }
+    }
 }
