@@ -31,8 +31,8 @@ div#AuctionImageContainer
 
 img.AuctionImage  
 {
-	max-width: 100%;
-	height: auto;
+	max-width: 2em;
+	height: 3em;
 	padding:20px;
 }
 
