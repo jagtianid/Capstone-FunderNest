@@ -8,6 +8,9 @@ namespace AuctionMVCWeb.Models
 {
     public class dbContext : DbContext
     {
+
+        public dbContext() : base("name=auction") { }
+
         public DbSet<UserInfo> userInfo { get; set; }
 
     }
