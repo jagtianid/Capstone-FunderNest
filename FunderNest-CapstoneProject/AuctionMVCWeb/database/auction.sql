@@ -1,6 +1,5 @@
 USE [auction]
 GO
-/****** Object:  Table [dbo].[tbItems]    Script Date: 04/08/2015 11:01:12 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -24,7 +23,6 @@ CREATE TABLE [dbo].[tbItems](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[tbCategories]    Script Date: 04/08/2015 11:01:12 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -42,7 +40,6 @@ CREATE TABLE [dbo].[tbCategories](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[tbBids]    Script Date: 04/08/2015 11:01:12 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -63,7 +60,6 @@ CREATE TABLE [dbo].[tbBids](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  StoredProcedure [dbo].[spTime]    Script Date: 04/08/2015 11:01:13 ******/
 SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER OFF
@@ -72,7 +68,6 @@ CREATE PROCEDURE [dbo].[spTime] AS
 
 SELECT getdate() as auction_time
 GO
-/****** Object:  StoredProcedure [dbo].[spListings]    Script Date: 04/08/2015 11:01:13 ******/
 SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER ON
@@ -145,7 +140,6 @@ where i.cat_id = @cat_id
 
 end
 GO
-/****** Object:  StoredProcedure [dbo].[spListCategory]    Script Date: 04/08/2015 11:01:13 ******/
 SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER OFF
@@ -161,7 +155,6 @@ UNION
 SELECT     '0' AS cat_id, 'All' AS cat_name, COUNT(0) AS TOTAL_ITEMS
 FROM         tbItems
 GO
-/****** Object:  StoredProcedure [dbo].[spListAllCategory]    Script Date: 04/08/2015 11:01:13 ******/
 SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER OFF
@@ -172,7 +165,6 @@ SELECT     c.cat_id, c.cat_name
 
 FROM         tbCategories c
 GO
-/****** Object:  StoredProcedure [dbo].[spItemDetails]    Script Date: 04/08/2015 11:01:13 ******/
 SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER ON
@@ -208,7 +200,6 @@ SELECT     	item_name,
 FROM         tbItems as i
 WHERE item_id=@item_id
 GO
-/****** Object:  StoredProcedure [dbo].[spCatName]    Script Date: 04/08/2015 11:01:13 ******/
 SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER OFF
@@ -223,7 +214,6 @@ SELECT     cat_name
 FROM         tbCategories
 WHERE     (cat_id = @cat_id)
 GO
-/****** Object:  StoredProcedure [dbo].[spBidHistory]    Script Date: 04/08/2015 11:01:13 ******/
 SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER ON
@@ -238,7 +228,6 @@ SELECT     item_date_bid, item_amount, item_bidder
 FROM        tbBids
 WHERE     (item_id = @item_id)
 GO
-/****** Object:  StoredProcedure [dbo].[spBid]    Script Date: 04/08/2015 11:01:13 ******/
 SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER ON
@@ -261,17 +250,10 @@ set @check_amount = (SELECT max(item_amount) FROM tbBids WHERE item_id = @item_i
 IF((@check_amount+0.09<@amount) OR @check_amount is null)AND (@check_date>GETDATE())
 BEGIN
 
---update main item
---UPDATE    auction_items
---SET item_price = @amount ,item_bidder = @bidder           
---WHERE item_id = @item_id
-
---update history
 INSERT INTO tbBids
                       (item_id,item_amount,item_bidder,item_date_bid)
 VALUES     (@item_id,@amount,@bidder,getDate())
 
---updated
 SELECT 1 AS [action]
 
 END
@@ -281,7 +263,6 @@ BEGIN
 SELECT 0 AS [action]
 END
 GO
-/****** Object:  StoredProcedure [dbo].[spAddAuction]    Script Date: 04/08/2015 11:01:13 ******/
 SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER ON
@@ -301,7 +282,6 @@ INSERT INTO tbItems
                       (item_name, item_description, item_date_open, item_date_close, item_seller, cat_id, img)
 VALUES     (@name, @description, GETDATE(), @closedate, @seller, @cat, @img)
 GO
-/****** Object:  StoredProcedure [dbo].[spTotalRaised]    Script Date: 04/08/2015 11:01:13 ******/
 SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER OFF

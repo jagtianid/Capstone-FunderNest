@@ -11,15 +11,11 @@ using SoftwareSolutions;
 
 namespace AuctionMVCWeb.CharityAuction
 {
-    /// <summary>
-    /// Summary description for pgItem.
-    /// </summary>
     public partial class Item : System.Web.UI.Page
     {
 
         protected void Page_Load(object sender, System.EventArgs e)
         {
-            // Put user code to initialize the page here
             if (!IsPostBack)
             {
                 lbItemId.Text = Request.QueryString["i"].ToString();
@@ -35,13 +31,13 @@ namespace AuctionMVCWeb.CharityAuction
 
                 if (lblEndTime.Text.Contains("Ended"))
                 {
-                    litUpdate.Text = "<p>Bidding on this item has finished.  I'm sorry you was too late!</p>";
+                    litUpdate.Text = "<p>Bidding on this item has finished. We're sorry you were too late!</p>";
                 }
                 else
                 {
                     if (lblCurrentBid.Text.Equals("<b>No bids</b>"))
                     {
-                        litUpdate.Text = "<p>Bidding on this item start at 1p, <b>Good luck!</b></p>";
+                        litUpdate.Text = "<p><b>Good luck!</b></p>";
                     }
                     else
                     {
@@ -60,7 +56,7 @@ namespace AuctionMVCWeb.CharityAuction
             {
 
                 decimal d = (decimal)Convert.ToDecimal(x);
-                string s = String.Format("{0:F2}", d); // "54.97"
+                string s = String.Format("{0:F2}", d); 
                 return "$ " + s;
             }
         }
@@ -68,11 +64,8 @@ namespace AuctionMVCWeb.CharityAuction
         public string FormatCountdown(string dtIn)
         {
             string returnvalue = "";
-            //change end date to count down (disable all buttons if finished)
             DateTime dtCount = new DateTime();
             dtCount = (DateTime)Convert.ToDateTime(dtIn);
-            // int ticker = DateTime.Now.Ticks - dtCount.Ticks;
-            //Response.Write(ticker.ToString());
 
             if (dtCount.Ticks > DateTime.Now.Ticks)
             {
@@ -93,7 +86,6 @@ namespace AuctionMVCWeb.CharityAuction
             }
             else
             {
-                //auction closed
                 returnvalue = "<font color=red>Ended</font>";
                 btnBid.Enabled = false;
                 txtBid.Enabled = false;
@@ -175,18 +167,14 @@ namespace AuctionMVCWeb.CharityAuction
 
                         if (cmd.ExecuteScalar().Equals(1))
                         {
-                            //bid was a success
                             litUpdate.Text = "<p>You are currently the <b>highest bidder</b>, Good luck!</p>";
                         }
-                        //was not a success    
                         else
                         {
-                            //too late message.  ha to the last min snipper
                             if (lblEndTime.Text.Contains("Ended"))
                             {
                                 litUpdate.Text = "<p>Bidding on this item has finished.  I'm sorry you was too late!</p>";
                             }
-                            //bid reject message
                             else
                             {
                                 double newvalue = double.Parse(lblCurrentBid.Text.Replace("<b>$ ", "").Replace("</b>", "")) + 0.10;
@@ -214,14 +202,13 @@ namespace AuctionMVCWeb.CharityAuction
             if (lblEndTime.Text.Contains("Ended"))
             {
 
-                litUpdate.Text = "<p>Bidding on this item has finished.  I'm sorry you was too late!</p>";
+                litUpdate.Text = "<p>Bidding on this item has finished. We're sorry you we're too late!</p>";
             }
             else
             {
-                //auto populate next bid
                 if (lblCurrentBid.Text.Equals("<b>No bids</b>"))
                 {
-                    litUpdate.Text = "<p>Bidding on this item start at 1p, <b>Good luck!</b></p>";
+                    litUpdate.Text = "<p><b>Good luck!</b></p>";
                 }
                 else
                 {
