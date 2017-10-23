@@ -51,13 +51,6 @@
                             <a href="/User/Register">Register</a>
                         </li>
 
-                        <li>
-                            <a href="/DementiaHackathon/auction">Auction</a>
-                        </li>
-
-                        <li>
-                            <a href="/DementiaHackathon/addAuction">Add Item for Auction</a>
-                        </li>
                 </ul>
 
             </div>

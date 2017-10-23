@@ -53,13 +53,6 @@
                         <a href="/User/Register">Create Account</a>
                     </li>
 
-                    <li>
-                        <a href="/DementiaHackathon/auction">Place Bid</a>
-                    </li>
-                    <li>
-                        <a href="/DementiaHackathon/addAuction">Add Item to Donate</a>
-                    </li>
-
                 </ul>
 
             </div>
