@@ -59,59 +59,59 @@
             <tr class="ThemeColor" style="height: 35px;">
 
                 <td>
-                    <h2> Ended Bids </h2>
-        </td>
-       </tr>
-        <form id="Form1" method="post" runat="server">
+                    <h2>Ended Bids </h2>
+                </td>
+            </tr>
+            </table>
+            <form id="Form1" method="post" runat="server">
 
+                <div class="SubHeading">
+                    <asp:Literal ID="litHeading" runat="server" EnableViewState="false" />
+                </div>
 
-            <div class="SubHeading">
-                <asp:Literal ID="litHeading" runat="server" EnableViewState="false" />
-            </div>
-
-            <asp:DataList ID="dlEndedListings" runat="server" BorderStyle="None"
-                BorderWidth="0px" EnableViewState="False" RepeatLayout="Table">
-                <HeaderTemplate>
-                    <table class="AuctionList">
-                        <tr class="ThemeColor" style="height: 35px;">
-                            <td nowrap="nowrap"><a href="EndedBids.aspx?s=Name"><b>Item</b></a></td>
-                            <td nowrap="nowrap"><a href="EndedBids.aspx?s=Buyer"><b>Winning&nbsp;Bidder</b></a></td>
-                            <td nowrap="nowrap" width="80" style="text-align: center;"><a href="EndedBids.aspx?s=BidNumber"><b>Bids</b></a></td>
-                            <td nowrap="nowrap" width="80"><a href="EndedBids.aspx?s=BidAmount"><b>Price</b></a></td>
-                            <td nowrap="nowrap" width="100"><a href="EndedBids.aspx?s=DateClose"><b>Time Left</b></a></td>
+                <asp:DataList ID="dlEndedListings" runat="server" BorderStyle="None"
+                    BorderWidth="0px" EnableViewState="False" RepeatLayout="Table">
+                    <HeaderTemplate>
+                        <table class="AuctionList">
+                            <tr class="ThemeColor" style="height: 35px;">
+                                <td nowrap="nowrap"><a href="EndedBids.aspx?s=Name"><b>Item</b></a></td>
+                                <td nowrap="nowrap"><a href="EndedBids.aspx?s=Buyer"><b>Winning&nbsp;Bidder</b></a></td>
+                                <td nowrap="nowrap" width="80" style="text-align: center;"><a href="EndedBids.aspx?s=BidNumber"><b>Bids</b></a></td>
+                                <td nowrap="nowrap" width="80"><a href="EndedBids.aspx?s=BidAmount"><b>Price</b></a></td>
+                                <td nowrap="nowrap" width="100"><a href="EndedBids.aspx?s=DateClose"><b>Time Left</b></a></td>
+                            </tr>
+                    </HeaderTemplate>
+                    <FooterTemplate>
+                        <tr class="ThemeColor" style="height: 5px;">
+                            <td colspan="6"></td>
                         </tr>
-                </HeaderTemplate>
-                <FooterTemplate>
-                    <tr class="ThemeColor" style="height: 5px;">
-                        <td colspan="6"></td>
-                    </tr>
-                    </table>
-                </FooterTemplate>
-                <ItemTemplate>
-                    <tr class="ThemeColorAlt">
-                        <td width="100%"><a href='Item.aspx?i=<%# DataBinder.Eval(Container.DataItem, "Id") %>'><%# DataBinder.Eval(Container.DataItem, "Name") %></a><br>
-                            <%# FormatDescription(DataBinder.Eval(Container.DataItem, "Description").ToString()) %>
-                        </td>
-                        <td nowrap="nowrap"><%# DataBinder.Eval(Container.DataItem, "Buyer") %></td>
-                        <td nowrap="nowrap" style="text-align: center;"><%# DataBinder.Eval(Container.DataItem, "BidNumber") %></td>
-                        <td nowrap="nowrap"><%# FormatAmount(DataBinder.Eval(Container.DataItem, "BidAmount").ToString()) %></td>
-                        <td nowrap="nowrap" style="text-align: right;"><%# FormatCountdown(DataBinder.Eval(Container.DataItem, "DateClose").ToString()) %></td>
-                    </tr>
-                </ItemTemplate>
-                <AlternatingItemTemplate>
-                    <tr class="ThemeColorAlt2">
-                        <td width="100%"><a href='Item.aspx?i=<%# DataBinder.Eval(Container.DataItem, "Id") %>'><%# DataBinder.Eval(Container.DataItem, "Name") %></a><br>
-                            <%# FormatDescription(DataBinder.Eval(Container.DataItem, "Description").ToString()) %>
-                        </td>
-                        <td nowrap="nowrap"><%# DataBinder.Eval(Container.DataItem, "Buyer")%></td>
-                        <td nowrap="nowrap" style="text-align: center;"><%# DataBinder.Eval(Container.DataItem, "BidNumber") %></td>
-                        <td nowrap="nowrap"><%# FormatAmount(DataBinder.Eval(Container.DataItem, "BidAmount").ToString())%></td>
-                        <td nowrap="nowrap" style="text-align: right;"><%# FormatCountdown(DataBinder.Eval(Container.DataItem, "DateClose").ToString())%></td>
-                    </tr>
-                </AlternatingItemTemplate>
-            </asp:DataList>
+                        </table>
+                    </FooterTemplate>
+                    <ItemTemplate>
+                        <tr class="ThemeColorAlt">
+                            <td width="100%"><a href='Item.aspx?i=<%# DataBinder.Eval(Container.DataItem, "Id") %>'><%# DataBinder.Eval(Container.DataItem, "Name") %></a><br>
+                                <%# FormatDescription(DataBinder.Eval(Container.DataItem, "Description").ToString()) %>
+                            </td>
+                            <td nowrap="nowrap"><%# DataBinder.Eval(Container.DataItem, "Buyer") %></td>
+                            <td nowrap="nowrap" style="text-align: center;"><%# DataBinder.Eval(Container.DataItem, "BidNumber") %></td>
+                            <td nowrap="nowrap"><%# FormatAmount(DataBinder.Eval(Container.DataItem, "BidAmount").ToString()) %></td>
+                            <td nowrap="nowrap" style="text-align: right;"><%# FormatCountdown(DataBinder.Eval(Container.DataItem, "DateClose").ToString()) %></td>
+                        </tr>
+                    </ItemTemplate>
+                    <AlternatingItemTemplate>
+                        <tr class="ThemeColorAlt2">
+                            <td width="100%"><a href='Item.aspx?i=<%# DataBinder.Eval(Container.DataItem, "Id") %>'><%# DataBinder.Eval(Container.DataItem, "Name") %></a><br>
+                                <%# FormatDescription(DataBinder.Eval(Container.DataItem, "Description").ToString()) %>
+                            </td>
+                            <td nowrap="nowrap"><%# DataBinder.Eval(Container.DataItem, "Buyer")%></td>
+                            <td nowrap="nowrap" style="text-align: center;"><%# DataBinder.Eval(Container.DataItem, "BidNumber") %></td>
+                            <td nowrap="nowrap"><%# FormatAmount(DataBinder.Eval(Container.DataItem, "BidAmount").ToString())%></td>
+                            <td nowrap="nowrap" style="text-align: right;"><%# FormatCountdown(DataBinder.Eval(Container.DataItem, "DateClose").ToString())%></td>
+                        </tr>
+                    </AlternatingItemTemplate>
+                </asp:DataList>
 
-        </form>
+            </form>
     </div>
 </body>
 </html>

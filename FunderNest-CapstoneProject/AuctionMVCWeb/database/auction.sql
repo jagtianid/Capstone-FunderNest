@@ -296,33 +296,6 @@ GROUP BY item_id
 SELECT SUM(MAX_BID) FROM #TEMP
 GO
 
-
- CREATE PROCEDURE [dbo].[spEndedBids] AS
- 
-  SELECT 
-        item_id, item_name, item_description, item_date_open, item_date_close, item_seller
-    FROM 
-        tbItems
-    WHERE 
-         item_date_close <= getdate()
-
-		 GO
-
-		 CREATE PROCEDURE [dbo].[spListAllEndedBids] AS
-
-SELECT   	i.item_id,
-		i.item_name,
-		i.item_description,
-		i.item_date_open,
-		i.item_date_close,
-		i.item_seller
-
-FROM         dbo.tbItems as i
-
-WHERE i.item_date_close <= getdate()
-
-GO
-
 CREATE PROCEDURE [dbo].[spEndedAuctions]  
 
 @cat_id int 
