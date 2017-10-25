@@ -12,11 +12,9 @@ using System.Web.UI.HtmlControls;
 
 namespace SoftwareSolutions.CharityAuction
 {
-	/// <summary>
-	/// Summary description for WebForm1.
-	/// </summary>
-	public partial class Auctions : System.Web.UI.Page
-	{
+
+    public partial class Auctions : System.Web.UI.Page
+    {
         public int iCategory
         {
             get
@@ -37,28 +35,27 @@ namespace SoftwareSolutions.CharityAuction
             }
         }
 
-		protected void Page_Load(object sender, System.EventArgs e)
-		{
-           
-            //use qstring for sorting?
+        protected void Page_Load(object sender, System.EventArgs e)
+        {
+
             if (Request.QueryString["s"] == null)
             {
-                getListings("DateClose",iCategory);
+                getListings("DateClose", iCategory);
             }
             else
             {
-                getListings(Request.QueryString["s"],iCategory);
+                getListings(Request.QueryString["s"], iCategory);
             }
 
             litTotal.Text = getTotalRaised();
-		}
-		public string FormatDescription (string x)
-		{
-			if(x.Length<130)
-				return x;
-			else
-				return x.Substring(0,130)+"<span title='..."+x.Substring(130)+"'>...</span>";
-		}
+        }
+        public string FormatDescription(string x)
+        {
+            if (x.Length < 130)
+                return x;
+            else
+                return x.Substring(0, 130) + "<span title='..." + x.Substring(130) + "'>...</span>";
+        }
 
         public string FormatAmount(string s)
         {
@@ -66,7 +63,7 @@ namespace SoftwareSolutions.CharityAuction
                 return "No bids";
             else
             {
-                return "$ " + String.Format("{0:F2}", decimal.Parse(s)); // "54.97"
+                return "$ " + String.Format("{0:F2}", decimal.Parse(s)); 
             }
         }
         public string FormatAmount(decimal d)
@@ -75,21 +72,18 @@ namespace SoftwareSolutions.CharityAuction
                 return "No bids";
             else
             {
-                return "$ " + String.Format("{0:F2}", d); // "54.97"
+                return "$ " + String.Format("{0:F2}", d); 
             }
         }
 
-		public string FormatCountdown(string dtIn)
-		{
-			string returnvalue="";
-			//change end date to count down (disable all buttons if finished)
-			DateTime dtCount = new DateTime();
-			dtCount = (DateTime)Convert.ToDateTime(dtIn);
-			// int ticker = DateTime.Now.Ticks - dtCount.Ticks;
-			//Response.Write(ticker.ToString());
+        public string FormatCountdown(string dtIn)
+        {
+            string returnvalue = "";
+            DateTime dtCount = new DateTime();
+            dtCount = (DateTime)Convert.ToDateTime(dtIn);
 
-			if (dtCount.Ticks>DateTime.Now.Ticks)
-			{
+            if (dtCount.Ticks > DateTime.Now.Ticks)
+            {
 
                 if ((dtCount.AddTicks(-DateTime.Now.Ticks).Month - 1) > 0)
                 {
@@ -110,15 +104,14 @@ namespace SoftwareSolutions.CharityAuction
                         (!(dtCount.AddTicks(-DateTime.Now.Ticks).Minute > 5)))
                         returnvalue += dtCount.AddTicks(-DateTime.Now.Ticks).Second + "s";
                 }
-			}
-			else
-			{
-				//auction closed
-				returnvalue = "<font color=red>Ended</font>";
-			}
-			
-			return returnvalue;
-		}
+            }
+            else
+            {
+                returnvalue = "<font color=red>Ended</font>";
+            }
+
+            return returnvalue;
+        }
 
         private string getTotalRaised()
         {
@@ -136,8 +129,8 @@ namespace SoftwareSolutions.CharityAuction
                     else
                     {
                         return "0.00";
-                    }                  
-                    
+                    }
+
                 }
             }
         }
@@ -162,11 +155,11 @@ namespace SoftwareSolutions.CharityAuction
             }
         }
 
-		private void getListings(string sSort, int iCategory)
+        private void getListings(string sSort, int iCategory)
         {
             AuctionItems auctionItems = new AuctionItems();
 
-			using (SqlConnection conn = new SqlConnection(Common.ConnectionString))
+            using (SqlConnection conn = new SqlConnection(Common.ConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand("spListings", conn))
                 {
@@ -179,7 +172,7 @@ namespace SoftwareSolutions.CharityAuction
                     {
                         cmd.Parameters.Add(new SqlParameter("@cat_id", iCategory));
                     }
-                    
+
                     conn.Open();
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
@@ -193,13 +186,12 @@ namespace SoftwareSolutions.CharityAuction
                             item.DateOpen = DateTime.Parse(dr["item_date_open"].ToString());
                             item.DateClose = DateTime.Parse(dr["item_date_close"].ToString());
                             item.Seller = dr["item_seller"].ToString();
-                            if(dr["item_amount"].ToString().Equals(string.Empty))
+                            if (dr["item_amount"].ToString().Equals(string.Empty))
                                 item.BidAmount = 0;
                             else
                                 item.BidAmount = decimal.Parse(dr["item_amount"].ToString());
                             item.Buyer = dr["item_bidder"].ToString();
                             item.BidNumber = int.Parse(dr["item_bids"].ToString());
-                            //item.Category = dr["cat_name"].ToString();
                             auctionItems.Add(item);
                         }
                     }
@@ -210,29 +202,25 @@ namespace SoftwareSolutions.CharityAuction
             {
                 AuctionItem item = new AuctionItem();
                 item.Description = "No items listed.";
-                auctionItems.Add(item);
-                //Response.Write("No items listed.");
             }
-            //else
-            //{
-                //Sort
-                if (sSort.Equals("DateClose") ||
-                    sSort.Equals("Name") ||
-                    sSort.Equals("Buyer") ||
-                    sSort.Equals("BidAmount") ||
-                    sSort.Equals("Category") )
-                {
-                    auctionItems.Sort(sSort, SortOrderEnum.Ascending);
-                }
-                else
-                {
-                    auctionItems.Sort(sSort, SortOrderEnum.Descending);
-                }
 
-                dlListings.DataSource = auctionItems;
-                dlListings.DataBind();		
-            //}
-		}
-            	
-	}
+            if (sSort.Equals("DateClose") ||
+                sSort.Equals("Name") ||
+                sSort.Equals("Buyer") ||
+                sSort.Equals("BidAmount") ||
+                sSort.Equals("Category"))
+            {
+                auctionItems.Sort(sSort, SortOrderEnum.Ascending);
+            }
+            else
+            {
+                auctionItems.Sort(sSort, SortOrderEnum.Descending);
+            }
+
+            dlListings.DataSource = auctionItems;
+            dlListings.DataBind();
+            
+        }
+
+    }
 }

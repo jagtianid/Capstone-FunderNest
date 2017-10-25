@@ -13,15 +13,6 @@ namespace SoftwareSolutions.CharityAuction {
     public partial class Auctions {
         
         /// <summary>
-        /// Header2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AuctionMVCWeb.Header Header2;
-        
-        /// <summary>
         /// Header1 control.
         /// </summary>
         /// <remarks>

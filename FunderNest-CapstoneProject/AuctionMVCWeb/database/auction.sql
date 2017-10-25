@@ -295,3 +295,101 @@ GROUP BY item_id
 
 SELECT SUM(MAX_BID) FROM #TEMP
 GO
+
+
+ CREATE PROCEDURE [dbo].[spEndedBids] AS
+ 
+  SELECT 
+        item_id, item_name, item_description, item_date_open, item_date_close, item_seller
+    FROM 
+        tbItems
+    WHERE 
+         item_date_close <= getdate()
+
+		 GO
+
+		 CREATE PROCEDURE [dbo].[spListAllEndedBids] AS
+
+SELECT   	i.item_id,
+		i.item_name,
+		i.item_description,
+		i.item_date_open,
+		i.item_date_close,
+		i.item_seller
+
+FROM         dbo.tbItems as i
+
+WHERE i.item_date_close <= getdate()
+
+GO
+
+CREATE PROCEDURE [dbo].[spEndedAuctions]  
+
+@cat_id int 
+
+AS
+
+if @cat_id is null
+begin
+
+SELECT   	e.item_id,
+		e.item_name,
+		e.item_description,
+		e.item_date_open,
+		e.item_date_close,
+		e.item_seller,
+	
+                          (SELECT     TOP 1 item_amount
+                            FROM         dbo. tbBids
+                            WHERE      tbBids.item_id = e.item_id
+                            ORDER BY item_amount DESC) AS item_amount,
+
+                          (SELECT     TOP 1 item_bidder
+                            FROM          dbo.tbBids
+                            WHERE      tbBids.item_id = e.item_id
+                            ORDER BY item_amount DESC) AS item_bidder,
+
+                          (SELECT     COUNT(0)
+                            FROM          dbo.tbBids
+                            WHERE      tbBids.item_id = e.item_id) AS item_bids,
+
+		case when cat_id is not null then (select cat_name from tbCategories where cat_id = e.cat_id) 
+		 else 'Everything Else' end as cat_name	
+
+FROM         dbo.tbItems as e
+WHERE e.item_date_close <= getdate()
+
+end
+else
+begin
+
+SELECT   	e.item_id,
+		e.item_name,
+		e.item_description,
+		e.item_date_open,
+		e.item_date_close,
+		e.item_seller,
+                          (SELECT     TOP 1 item_amount
+                            FROM         dbo. tbBids
+                            WHERE      tbBids.item_id = e.item_id
+                            ORDER BY item_amount DESC) AS item_amount,
+
+                          (SELECT     TOP 1 item_bidder
+                            FROM          dbo.tbBids
+                            WHERE      tbBids.item_id = e.item_id
+                            ORDER BY item_amount DESC) AS item_bidder,
+
+                          (SELECT     COUNT(0)
+                            FROM          dbo.tbBids
+                            WHERE      tbBids.item_id = e.item_id) AS item_bids,
+
+		case when cat_id is not null then (select cat_name from tbCategories where cat_id = e.cat_id) 
+		 else 'Everything Else' end as cat_name	
+
+FROM         dbo.tbItems as e
+
+where e.cat_id = @cat_id AND e.item_date_close <= getdate()
+
+
+end
+GO

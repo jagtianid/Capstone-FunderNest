@@ -2,7 +2,6 @@
 
 <%@ OutputCache Duration="1" VaryByParam="c" %>
 <%@ Register Src="Header.ascx" TagName="Header" TagPrefix="uc2" %>
-<!--     <uc2:Header ID="Header2" runat="server" EnableViewState="false" />-->
 
 
 
@@ -11,7 +10,7 @@
 
 <head>
 
-    <title>Charity Auction</title>
+    <title>FunderNest</title>
     <link href="styles/style.css" rel="stylesheet" type="text/css" />
 
     <link href="Content/css" rel="stylesheet" type="text/css" />
@@ -102,7 +101,7 @@
                             <td nowrap="nowrap"><a href="Auctions.aspx?s=Buyer"><b>Winning&nbsp;Bidder</b></a></td>
                             <td nowrap="nowrap" width="80" style="text-align: center;"><a href="Auctions.aspx?s=BidNumber"><b>Bids</b></a></td>
                             <td nowrap="nowrap" width="80"><a href="Auctions.aspx?s=BidAmount"><b>Price</b></a></td>
-                            <td nowrap="nowrap" width="80"><a href="Auctions.aspx?s=DateClose"><b>Time Left</b></a></td>
+                            <td nowrap="nowrap" width="100"><a href="Auctions.aspx?s=DateClose"><b>Time Left</b></a></td>
                         </tr>
                 </HeaderTemplate>
                 <FooterTemplate>
