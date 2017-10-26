@@ -3,8 +3,6 @@
 <%@ OutputCache Duration="1" VaryByParam="c" %>
 <%@ Register Src="Header.ascx" TagName="Header" TagPrefix="uc2" %>
 
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -12,7 +10,6 @@
 
     <title>FunderNest</title>
     <link href="styles/style.css" rel="stylesheet" type="text/css" />
-
     <link href="Content/css" rel="stylesheet" type="text/css" />
     <link href="bundles/modernizr" rel="stylesheet" type="text/css" />
     <link href="bundles/jquery" rel="stylesheet" type="text/css" />

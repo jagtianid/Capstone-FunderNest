@@ -161,7 +161,7 @@ namespace SoftwareSolutions.CharityAuction
 
             using (SqlConnection conn = new SqlConnection(Common.ConnectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("spListings", conn))
+                using (SqlCommand cmd = new SqlCommand("spActiveAuction", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     if (iCategory.Equals(0))

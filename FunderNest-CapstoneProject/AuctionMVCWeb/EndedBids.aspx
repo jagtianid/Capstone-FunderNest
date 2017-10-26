@@ -8,7 +8,6 @@
 
     <title>FunderNest</title>
     <link href="styles/style.css" rel="stylesheet" type="text/css" />
-
     <link href="Content/css" rel="stylesheet" type="text/css" />
     <link href="bundles/modernizr" rel="stylesheet" type="text/css" />
     <link href="bundles/jquery" rel="stylesheet" type="text/css" />
@@ -57,7 +56,6 @@
     <div class="PageLayout">
         <table class="AuctionList">
             <tr class="ThemeColor" style="height: 35px;">
-
                 <td>
                     <h2>Ended Bids </h2>
                 </td>
