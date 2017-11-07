@@ -14,7 +14,7 @@ namespace AuctionMVCWeb.CharityAuction
 		protected void Page_Load(object sender, System.EventArgs e)
 		{
 			// Put user code to initialize the page here
-		getHistory();
+		    getHistory();
 		}
 
 		public string trimer (string x)

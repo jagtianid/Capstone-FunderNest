@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AuctionMVCWeb.Models;
+using System.DirectoryServices;
 
 namespace AuctionMVCWeb.Controllers
 {
@@ -29,7 +30,7 @@ namespace AuctionMVCWeb.Controllers
         [HttpPost]
         public ActionResult Register(UserInfo info)
         {
-           if (ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 using (dbContext db = new dbContext())
                 {
@@ -42,15 +43,18 @@ namespace AuctionMVCWeb.Controllers
             return View();
         }
 
+
         //Login 
         //Get
         public ActionResult Login()
         {
+
             return View();
         }
         [HttpPost]
         public ActionResult Login(UserInfo user)
         {
+
             using (dbContext db = new dbContext())
             {
                 var usr = db.userInfo.Where(u => u.Email == user.Email && u.Password == user.Password).FirstOrDefault();
@@ -60,11 +64,14 @@ namespace AuctionMVCWeb.Controllers
                     Session["FName"] = usr.FName.ToString();
                     Session["Email"] = usr.Email.ToString();
                     return RedirectToAction("LoggedIn");
+
+
                 }
                 else
                 {
                     ModelState.AddModelError("", "The username or password is incorrect.");
                 }
+
             }
             return View();
         }
@@ -78,6 +85,8 @@ namespace AuctionMVCWeb.Controllers
             {
                 return RedirectToAction("Login");
             }
+
         }
+
     }
 }

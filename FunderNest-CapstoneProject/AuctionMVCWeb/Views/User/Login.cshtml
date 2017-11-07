@@ -4,8 +4,8 @@
     ViewBag.Title = "Login";
 }
 <style>
-    h2{
-margin-left: 98px;
+    h2 {
+        margin-left: 98px;
     }
 </style>
 <a href="/Home/Index">
@@ -22,7 +22,7 @@ margin-left: 98px;
 {
 
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -49,6 +49,7 @@ margin-left: 98px;
         </div>
     </div>
 }
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

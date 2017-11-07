@@ -173,7 +173,7 @@ namespace AuctionMVCWeb.CharityAuction
                         {
                             if (lblEndTime.Text.Contains("Ended"))
                             {
-                                litUpdate.Text = "<p>Bidding on this item has finished.  I'm sorry you was too late!</p>";
+                                litUpdate.Text = "<p>Bidding on this item has finished. We're sorry but you were too late!</p>";
                             }
                             else
                             {

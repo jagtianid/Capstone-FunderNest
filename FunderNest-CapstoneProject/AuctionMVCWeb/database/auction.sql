@@ -147,7 +147,7 @@ SET ANSI_NULLS OFF
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE PROCEDURE [dbo].[spBidHistory]  
+CREATE PROCEDURE [dbo].[spBidHistory] 
 
 @item_id int
 

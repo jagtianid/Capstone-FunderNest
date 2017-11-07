@@ -351,6 +351,8 @@
     <Content Include="Views\User\LoggedIn.cshtml" />
     <Content Include="Views\DementiaHackathon\addAuction.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\User\Confirm.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
     <None Include="Web References\com.paypal.sandbox.www\CoreComponentTypes.xsd">
       <SubType>Designer</SubType>
     </None>

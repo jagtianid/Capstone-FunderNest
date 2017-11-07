@@ -4,11 +4,11 @@ using System.Configuration;
 using System.Collections.Specialized;
 using System.Reflection;
 using System.DirectoryServices;
+using System.Net.Mail;
 
-
-    namespace AuctionMVCWeb.Models
+namespace AuctionMVCWeb.Models
     {
-        public class UserInfo
+        public class UserInfo 
         {
 
             //Model 
@@ -29,8 +29,8 @@ using System.DirectoryServices;
             public string ConfirmPassword { get; set; }
 
 
+    }
 
-        }
     }
 
 

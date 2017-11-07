@@ -21,6 +21,9 @@
             width: 180px;
             margin: auto;
         }
+        .auto-style1 {
+            width: 288px;
+        }
     </style>
 
 </head>
@@ -64,7 +67,10 @@
 
         <table id="Table1" border="0" cellpadding="5" cellspacing="5">
             <tr>
-                <td></td>
+                <td>
+                        <br />
+                        <br />
+                    </td>
                 <td style="height: 27px">
                     <h3>Item Name</h3>
 
@@ -101,11 +107,17 @@
             <tr>
                 <td></td>
                 <td>
-                    <h3>Seller Name</h3>
+                    <h3 class="auto-style1">Seller Name </h3>
 
-                    <asp:TextBox ID="txtSeller" runat="server" Width="240px"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server"
-                        ControlToValidate="txtSeller" ErrorMessage="Missing seller name"></asp:RequiredFieldValidator>
+                    &nbsp;<asp:Label ID="lbFName" runat="server" Text="First Name"></asp:Label>
+                 
+                    <h3 class="auto-style1">Seller Email</h3>
+                    <p class="auto-style1">
+
+                    <asp:Label ID="lbEmail" runat="server" Text="Email Address"></asp:Label>
+                 
+                    </p>
+                 
                 </td>
             </tr>
             <tr>

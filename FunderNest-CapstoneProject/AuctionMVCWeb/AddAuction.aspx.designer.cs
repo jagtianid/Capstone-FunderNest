@@ -85,22 +85,22 @@ namespace AuctionMVCWeb.CharityAuction {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
         
         /// <summary>
-        /// txtSeller control.
+        /// lbFName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSeller;
+        protected global::System.Web.UI.WebControls.Label lbFName;
         
         /// <summary>
-        /// RequiredFieldValidator4 control.
+        /// lbEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
+        protected global::System.Web.UI.WebControls.Label lbEmail;
         
         /// <summary>
         /// Calendar1 control.
