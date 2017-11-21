@@ -40,16 +40,12 @@
                         <a href="/Home/Index">Home</a>
 
                     </li>
-                    <li class="dropdown">
 
+                     <li>
+                        <a href="/User/Logout">Logout</a>
 
-                        <li>
-                            <a href="/User/Login">Log In</a>
-                        </li>
-
-                        <li>
-                            <a href="/User/Register">Register</a>
-                        </li>
+                    </li>
+                 
 
                 </ul>
 

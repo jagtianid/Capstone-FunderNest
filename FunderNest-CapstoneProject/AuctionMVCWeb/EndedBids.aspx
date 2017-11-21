@@ -34,17 +34,13 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>
+
+                      <li>
                         <a href="/Home/Index">Home</a>
-
                     </li>
 
                     <li>
-                        <a href="/User/Login">Log In</a>
-                    </li>
-
-                    <li>
-                        <a href="/User/Register">Create Account</a>
+                        <a href="/User/Logout">Logout</a>
                     </li>
 
                 </ul>

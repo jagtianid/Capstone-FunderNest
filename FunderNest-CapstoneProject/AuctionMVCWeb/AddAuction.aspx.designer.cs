@@ -22,6 +22,15 @@ namespace AuctionMVCWeb.CharityAuction {
         protected global::System.Web.UI.HtmlControls.HtmlForm Form1;
         
         /// <summary>
+        /// Header1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AuctionMVCWeb.Header Header1;
+        
+        /// <summary>
         /// litHeader control.
         /// </summary>
         /// <remarks>
@@ -31,13 +40,13 @@ namespace AuctionMVCWeb.CharityAuction {
         protected global::System.Web.UI.WebControls.Literal litHeader;
         
         /// <summary>
-        /// Header1 control.
+        /// litHeader2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AuctionMVCWeb.Header Header1;
+        protected global::System.Web.UI.WebControls.Literal litHeader2;
         
         /// <summary>
         /// txtName1 control.
@@ -92,6 +101,15 @@ namespace AuctionMVCWeb.CharityAuction {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbFName;
+        
+        /// <summary>
+        /// lbLName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbLName;
         
         /// <summary>
         /// lbEmail control.

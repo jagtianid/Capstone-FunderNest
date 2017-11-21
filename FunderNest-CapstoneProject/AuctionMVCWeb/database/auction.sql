@@ -366,3 +366,49 @@ where a.cat_id = @cat_id AND a.item_date_close >= getdate()
 
 end
 GO
+
+CREATE PROCEDURE [dbo].[spTotalMoneyRaised] AS
+
+select item_id, MAX(item_amount) AS MAX_BID
+INTO            #TEMPVAR
+from tbBids
+where item_id IN (Select item_id from tbItems where item_date_close >= getdate())
+GROUP BY item_id
+
+SELECT SUM(MAX_BID) FROM #TEMPVAR
+
+GO
+
+
+CREATE PROCEDURE [dbo].[spKeyAdmin]
+
+@ID nvarchar(MAX)
+
+AS
+
+SELECT     AdminKey
+FROM         UserInfoes
+WHERE     (ID = @ID) 
+GO
+
+CREATE PROCEDURE [dbo].[spKeyForAdmin]
+
+@AdminKey nvarchar(MAX)
+
+AS
+
+SELECT     FName
+FROM         UserInfoes
+WHERE     (AdminKey = @AdminKey) 
+GO
+
+CREATE PROCEDURE [dbo].[spAdminKey]
+
+@AdminKey int
+
+AS
+
+SELECT     FName
+FROM         UserInfoes
+WHERE     (AdminKey = @AdminKey) 
+GO

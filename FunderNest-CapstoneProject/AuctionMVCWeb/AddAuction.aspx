@@ -21,6 +21,7 @@
             width: 180px;
             margin: auto;
         }
+
         .auto-style1 {
             width: 288px;
         }
@@ -40,15 +41,12 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+
                     <li>
                         <a href="/Home/Index">Home</a>
                     </li>
                     <li>
-                        <a href="/User/Login">Log In</a>
-                    </li>
-
-                    <li>
-                        <a href="/User/Register">Create Account</a>
+                        <a href="/User/Logout">Logout</a>
                     </li>
                 </ul>
 
@@ -58,20 +56,27 @@
 
     <form id="Form1" method="post" runat="server">
 
-        <asp:Literal runat="server" ID="litHeader">
-        </asp:Literal>
-
         <uc2:Header ID="Header1" runat="server" EnableViewState="false" />
         <h1>Add Donation 
         </h1>
+        <p>
+        </p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</p>
 
         <table id="Table1" border="0" cellpadding="5" cellspacing="5">
+
             <tr>
                 <td>
-                        <br />
-                        <br />
-                    </td>
+                    <br />
+                    <br />
+                </td>
                 <td style="height: 27px">
+                    <asp:Literal runat="server" ID="litHeader">
+                    </asp:Literal>
+
+                    <asp:Literal runat="server" ID="litHeader2">
+                    </asp:Literal>
+
                     <h3>Item Name</h3>
 
                     <asp:TextBox ID="txtName1" runat="server" Width="408px"></asp:TextBox>
@@ -92,8 +97,6 @@
             </tr>
             <tr>
                 <td></td>
-
-
             </tr>
             <tr>
                 <td></td>
@@ -110,14 +113,16 @@
                     <h3 class="auto-style1">Seller Name </h3>
 
                     &nbsp;<asp:Label ID="lbFName" runat="server" Text="First Name"></asp:Label>
-                 
+
+                    <asp:Label ID="lbLName" runat="server" Text="Last Name"></asp:Label>
+
                     <h3 class="auto-style1">Seller Email</h3>
                     <p class="auto-style1">
 
-                    <asp:Label ID="lbEmail" runat="server" Text="Email Address"></asp:Label>
-                 
+                        <asp:Label ID="lbEmail" runat="server" Text="Email Address"></asp:Label>
+
                     </p>
-                 
+
                 </td>
             </tr>
             <tr>

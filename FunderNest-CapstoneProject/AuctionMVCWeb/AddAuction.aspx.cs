@@ -9,20 +9,21 @@ using AuctionMVCWeb.Controllers;
 using System.Linq;
 
 
-namespace AuctionMVCWeb.CharityAuction 
+namespace AuctionMVCWeb.CharityAuction
 {
-   
+
     public partial class AddAuction : System.Web.UI.Page
     {
 
         protected void Page_Load(object sender, System.EventArgs e)
         {
-         
+
             if (!IsPostBack)
             {
                 if (Session["Id"] != null)
                 {
                     lbFName.Text = Session["FName"].ToString();
+                    lbLName.Text = Session["LName"].ToString();
                     lbEmail.Text = Session["Email"].ToString();
 
                 }
@@ -42,13 +43,13 @@ namespace AuctionMVCWeb.CharityAuction
                         {
 
                             while (rdr.Read())
-                             {
-                                 DropDownList1.Items.Add(new ListItem(rdr["cat_name"].ToString(), rdr["cat_id"].ToString()));
+                            {
+                                DropDownList1.Items.Add(new ListItem(rdr["cat_name"].ToString(), rdr["cat_id"].ToString()));
                             }
 
                         }
                     }
-              
+
 
 
                 }
@@ -85,7 +86,10 @@ namespace AuctionMVCWeb.CharityAuction
             }
 
             litHeader.Text =
-                 "<h5>Auction added</h5>";
+                 "<h5>Your auction has been added</h5>";
+
+            litHeader2.Text =
+               "<a href = /User/LoggedIn/> What's Next? </a>";
 
             txtDescription.Enabled = false;
             txtName1.Enabled = false;
@@ -109,12 +113,12 @@ namespace AuctionMVCWeb.CharityAuction
 
         protected void txtSeller_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
 
-       
+
 
     }
-    }
+}
 

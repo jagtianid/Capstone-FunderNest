@@ -5,17 +5,20 @@ using System.Web;
 using System.Web.Mvc;
 using AuctionMVCWeb.Models;
 using System.DirectoryServices;
+using System.Data.SqlClient;
+using SoftwareSolutions;
+using System.Web.Security;
 
 namespace AuctionMVCWeb.Controllers
 {
     public class UserController : Controller
     {
 
-        private dbContext db = new dbContext();
+        private UserdbContext db = new UserdbContext();
         // GET: User
         public ActionResult Index()
         {
-            using (dbContext db = new dbContext())
+            using (UserdbContext db = new UserdbContext())
             {
                 return View(db.userInfo.ToList());
             }
@@ -27,12 +30,13 @@ namespace AuctionMVCWeb.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Register(UserInfo info)
         {
             if (ModelState.IsValid)
             {
-                using (dbContext db = new dbContext())
+                using (UserdbContext db = new UserdbContext())
                 {
                     db.userInfo.Add(info);
                     db.SaveChanges();
@@ -54,15 +58,16 @@ namespace AuctionMVCWeb.Controllers
         [HttpPost]
         public ActionResult Login(UserInfo user)
         {
-
-            using (dbContext db = new dbContext())
+            using (UserdbContext db = new UserdbContext())
             {
                 var usr = db.userInfo.Where(u => u.Email == user.Email && u.Password == user.Password).FirstOrDefault();
                 if (usr != null)
                 {
                     Session["ID"] = user.ID.ToString();
                     Session["FName"] = usr.FName.ToString();
+                    Session["LName"] = usr.LName.ToString();
                     Session["Email"] = usr.Email.ToString();
+
                     return RedirectToAction("LoggedIn");
 
 
@@ -88,5 +93,57 @@ namespace AuctionMVCWeb.Controllers
 
         }
 
+        public ActionResult LoginAdmin()
+        {
+
+            return View();
+
+        }
+        [HttpPost]
+        public ActionResult LoginAdmin(UserInfo admin)
+        {
+            using (UserdbContext db = new UserdbContext())
+            {
+                var adm = db.userInfo.Where(a => a.Email == admin.Email && a.Password == admin.Password && a.AdminKey == admin.AdminKey).FirstOrDefault();
+                if (adm != null)
+                {
+                    Session["ID"] = admin.ID.ToString();
+                    Session["Email"] = admin.Email.ToString();
+                    Session["Password"] = admin.Password.ToString();
+                    Session["AdminKey"] = admin.AdminKey.ToString();
+
+                    return RedirectToAction("AdminLoggedIn");
+
+
+                }
+                else
+                {
+                    ModelState.AddModelError("", "The username, password  or admin key is incorrect.");
+                }
+
+            }
+            return View();
+        }
+
+        public ActionResult AdminLoggedIn()
+        {
+            if (Session["Id"] != null)
+            {
+                return Redirect("~/EndedBids.aspx");
+            }
+            else
+            {
+                return RedirectToAction("LoginAdmin");
+            }
+
+
+        }
+
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            FormsAuthentication.SignOut();
+            return Redirect("/Home/Index");
+        }
     }
 }

@@ -118,7 +118,7 @@ namespace SoftwareSolutions.CharityAuction
             using (SqlConnection conn = new SqlConnection(Common.ConnectionString))
             {
                 conn.Open();
-                using (SqlCommand cmd = new SqlCommand("spTotalRaised", conn))
+                using (SqlCommand cmd = new SqlCommand("spTotalMoneyRaised", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     decimal returnvalue;
@@ -138,7 +138,7 @@ namespace SoftwareSolutions.CharityAuction
         {
             if (intCatId.Equals(0))
             {
-                return "All";
+                return null;
             }
             else
             {

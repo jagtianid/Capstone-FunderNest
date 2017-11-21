@@ -21,6 +21,11 @@
             font-size: 26pt;
             text-align: center;
         }
+
+          h4 {
+            font-family: 'Trebuchet MS';
+            font-size: 18pt;
+        }
     </style>
 </head>
 <body>
@@ -35,17 +40,12 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+
                     <li>
                         <a href="/Home/Index">Home</a>
-
                     </li>
-
                     <li>
-                        <a href="/User/Login">Log In</a>
-                    </li>
-
-                    <li>
-                        <a href="/User/Register">Create Account</a>
+                        <a href="/User/Logout">Logout</a>
                     </li>
 
                 </ul>
@@ -84,17 +84,19 @@
         <form id="Form1" method="post" runat="server">
 
 
-            <div class="SubHeading">
+            <div class="SubHeading">     
+                <h4> Select an item to bid:</h4>
+
                 <asp:Literal ID="litHeading" runat="server" EnableViewState="false" />
+
             </div>
 
             <asp:DataList ID="dlListings" runat="server" BorderStyle="None"
-                BorderWidth="0px" EnableViewState="False" RepeatLayout="Table">
+                BorderWidth="0px" EnableViewState="False" RepeatLayout="Table" Width="550px">
                 <HeaderTemplate>
                     <table class="AuctionList">
                         <tr class="ThemeColor" style="height: 35px;">
                             <td nowrap="nowrap"><a href="Auctions.aspx?s=Name"><b>Item</b></a></td>
-                            <td nowrap="nowrap"><a href="Auctions.aspx?s=Buyer"><b>Winning&nbsp;Bidder</b></a></td>
                             <td nowrap="nowrap" width="80" style="text-align: center;"><a href="Auctions.aspx?s=BidNumber"><b>Bids</b></a></td>
                             <td nowrap="nowrap" width="80"><a href="Auctions.aspx?s=BidAmount"><b>Price</b></a></td>
                             <td nowrap="nowrap" width="100"><a href="Auctions.aspx?s=DateClose"><b>Time Left</b></a></td>
@@ -111,7 +113,6 @@
                         <td width="100%"><a href='Item.aspx?i=<%# DataBinder.Eval(Container.DataItem, "Id") %>'><%# DataBinder.Eval(Container.DataItem, "Name") %></a><br>
                             <%# FormatDescription(DataBinder.Eval(Container.DataItem, "Description").ToString()) %>
                         </td>
-                        <td nowrap="nowrap"><%# DataBinder.Eval(Container.DataItem, "Buyer") %></td>
                         <td nowrap="nowrap" style="text-align: center;"><%# DataBinder.Eval(Container.DataItem, "BidNumber") %></td>
                         <td nowrap="nowrap"><%# FormatAmount(DataBinder.Eval(Container.DataItem, "BidAmount").ToString()) %></td>
                         <td nowrap="nowrap" style="text-align: right;"><%# FormatCountdown(DataBinder.Eval(Container.DataItem, "DateClose").ToString()) %></td>
@@ -122,7 +123,6 @@
                         <td width="100%"><a href='Item.aspx?i=<%# DataBinder.Eval(Container.DataItem, "Id") %>'><%# DataBinder.Eval(Container.DataItem, "Name") %></a><br>
                             <%# FormatDescription(DataBinder.Eval(Container.DataItem, "Description").ToString()) %>
                         </td>
-                        <td nowrap="nowrap"><%# DataBinder.Eval(Container.DataItem, "Buyer")%></td>
                         <td nowrap="nowrap" style="text-align: center;"><%# DataBinder.Eval(Container.DataItem, "BidNumber") %></td>
                         <td nowrap="nowrap"><%# FormatAmount(DataBinder.Eval(Container.DataItem, "BidAmount").ToString())%></td>
                         <td nowrap="nowrap" style="text-align: right;"><%# FormatCountdown(DataBinder.Eval(Container.DataItem, "DateClose").ToString())%></td>
