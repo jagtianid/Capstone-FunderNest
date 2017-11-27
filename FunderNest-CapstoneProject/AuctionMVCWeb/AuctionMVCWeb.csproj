@@ -211,6 +211,7 @@
       <DependentUpon>Item.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\AdminInfo.cs" />
+    <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Models\UserdbContext.cs" />
     <Compile Include="Models\UserInfo.cs" />
     <Compile Include="PDT\PDTHolder.cs" />

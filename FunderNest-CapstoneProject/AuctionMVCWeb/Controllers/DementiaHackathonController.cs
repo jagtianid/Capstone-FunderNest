@@ -29,5 +29,12 @@ namespace Capstone_Project_Prototype.Controllers
             return Redirect("/pages/index.aspx");
         }
 
+        [HttpPost]
+        public ActionResult SendEmailView()
+        {
+            //call SendEmailView view to invoke webmail  
+            return View();
+        }
+
     }
 }
