@@ -42,7 +42,8 @@ namespace AuctionMVCWeb.Controllers
                     db.SaveChanges();
                 }
                 ModelState.Clear();
-                ViewBag.Message = info.FName + " " + info.LName + " " + "has successfully registered.";
+                return RedirectToAction("SendEmailView");
+
             }
             return View();
         }
@@ -144,6 +145,19 @@ namespace AuctionMVCWeb.Controllers
             Session.Clear();
             FormsAuthentication.SignOut();
             return Redirect("/Home/Index");
+        }
+
+        [HttpPost]
+        public ActionResult SendEmailView()
+        {
+            if (Session["Email"] != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Register");
+            }
         }
     }
 }

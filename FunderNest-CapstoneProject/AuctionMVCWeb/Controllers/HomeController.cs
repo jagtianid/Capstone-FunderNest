@@ -27,11 +27,7 @@ namespace AuctionMVCWeb.Controllers
             return View();
         }
 
-        [HttpPost]
- public ActionResult SendEmailView()
-        {
-            return View();
-        }
+    
 
       
     }

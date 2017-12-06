@@ -4,6 +4,7 @@ Team Members: Dyllis Luk, Divya Jagtiani and Michelle Samai-Chattergoon
 
 Mission: To help HackerNest but more specifically, DementiaHack with donating items for those struggling with Dementia.
 
-Our working component of our prototype system is based on the 'expiredBids' use case. This is built specifically for the administrator. This prototype will display bids that have been closed/expired.  
-
-This procedure will be a more effective approach to convey people to donate for a worthy cause. 
+This submission consists of the overall working components for our project. 
+A user is able to register, login, donate on items, or bid items.
+An administrator can login and view bids and items that have ended.
+An email confirmation takes place when a user has registered and will show the page in the client's email.

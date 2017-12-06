@@ -3,6 +3,7 @@
     ViewBag.Title = "SendEmailView";
 }
 
+
 @{
     try
     {
@@ -13,7 +14,7 @@
         Email = Request["Email"].ToString();
         SubJect = "Thank You for Registering with FunderNest!";
         Body = "This email is to confirm that you have now registered to donate with FunderNest. Login now to auction or bid! ";
-      
+
         //Configuring webMail class to send emails
         WebMail.SmtpServer = "smtp.gmail.com"; //gmail smtp server
         WebMail.SmtpPort = 587; //gmail port to send emails
@@ -35,6 +36,8 @@
         <div class="text-danger">
             Problem while sending email, please check gmail server details.
         </div>
-    }
+        }
+    
 }
-  
+
+
