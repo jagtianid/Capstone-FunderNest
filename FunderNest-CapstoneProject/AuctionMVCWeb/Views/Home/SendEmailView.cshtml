@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "SendEmailView";
+}
+
+@{
+    try
+    {
+        //parameters to send email
+        string Email, FromOrSenderEmail = "fundernestcapstone@gmail.com", SubJect, Body;
+
+        //Reading values from form collection (Querystring) and assigning values to parameters
+        Email = Request["Email"].ToString();
+        SubJect = "Thank You for Registering with FunderNest!";
+        Body = "This email is to confirm that you have now registered to donate with FunderNest. Login now to auction or bid! ";
+      
+        //Configuring webMail class to send emails
+        WebMail.SmtpServer = "smtp.gmail.com"; //gmail smtp server
+        WebMail.SmtpPort = 587; //gmail port to send emails
+        WebMail.SmtpUseDefaultCredentials = true;
+        WebMail.EnableSsl = true; //sending emails with secure protocol
+        WebMail.UserName = FromOrSenderEmail;//EmailId used to send emails from application
+        WebMail.Password = "capstone@sem6";
+        WebMail.From = FromOrSenderEmail; //email sender email address.
+
+        //Sending email
+        WebMail.Send(to: Email, subject: SubJect, body: Body, isBodyHtml: true);
+        <hr />
+        <div class="text-success">
+            Email Sent Successfully. Please confirm your email before proceeding.
+        </div>
+    }
+    catch (Exception)
+    {
+        <div class="text-danger">
+            Problem while sending email, please check gmail server details.
+        </div>
+    }
+}
+  

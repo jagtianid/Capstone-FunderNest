@@ -211,7 +211,6 @@
       <DependentUpon>Item.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\AdminInfo.cs" />
-    <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Models\UserdbContext.cs" />
     <Compile Include="Models\UserInfo.cs" />
     <Compile Include="PDT\PDTHolder.cs" />
@@ -355,6 +354,7 @@
     <Content Include="Views\User\LoginAdmin.cshtml" />
     <Content Include="Views\User\AdminLoggedIn.cshtml" />
     <Content Include="Views\User\Logout.cshtml" />
+    <Content Include="Views\Home\SendEmailView.cshtml" />
     <None Include="Web References\com.paypal.sandbox.www\CoreComponentTypes.xsd">
       <SubType>Designer</SubType>
     </None>
