@@ -22,7 +22,7 @@
             text-align: center;
         }
 
-          h4 {
+        h4 {
             font-family: 'Trebuchet MS';
             font-size: 18pt;
         }
@@ -44,11 +44,13 @@
                     <li>
                         <a href="/Home/Index">Home</a>
                     </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right ">
                     <li>
                         <a href="/User/Logout">Logout</a>
                     </li>
-
                 </ul>
+
 
             </div>
         </div>
@@ -84,8 +86,8 @@
         <form id="Form1" method="post" runat="server">
 
 
-            <div class="SubHeading">     
-                <h4> Select an item to bid:</h4>
+            <div class="SubHeading">
+                <h4>Select an item to bid:</h4>
 
                 <asp:Literal ID="litHeading" runat="server" EnableViewState="false" />
 

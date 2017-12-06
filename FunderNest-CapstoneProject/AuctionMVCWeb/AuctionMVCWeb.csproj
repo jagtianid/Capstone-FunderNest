@@ -254,8 +254,12 @@
     <Content Include="Header.ascx" />
     <Content Include="History.aspx" />
     <Content Include="images\FunderNestBanner.jpg" />
+    <Content Include="images\mainpage\dementiaimg.jpg" />
     <Content Include="images\mainpage\hackimage.jpg" />
     <Content Include="images\mainpage\hackimage1.jpg" />
+    <Content Include="images\mainpage\job.jpg" />
+    <Content Include="images\mainpage\missionstatimg.jpg" />
+    <Content Include="images\mainpage\overfishing.jpg" />
     <Content Include="index.htm" />
     <Content Include="Item.aspx" />
     <Content Include="PDT\PDTStart.aspx" />
