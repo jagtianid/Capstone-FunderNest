@@ -354,7 +354,7 @@
     <Content Include="Views\User\LoginAdmin.cshtml" />
     <Content Include="Views\User\AdminLoggedIn.cshtml" />
     <Content Include="Views\User\Logout.cshtml" />
-    <Content Include="Views\User\SendEmailView.cshtml" />
+    <Content Include="Views\User\SendEmail.cshtml" />
     <None Include="Web References\com.paypal.sandbox.www\CoreComponentTypes.xsd">
       <SubType>Designer</SubType>
     </None>

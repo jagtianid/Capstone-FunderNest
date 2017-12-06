@@ -1,17 +1,15 @@
-﻿
-@{
-    ViewBag.Title = "SendEmailView";
+﻿@{
+    ViewBag.Title = "www.compilemode.com";
 }
 
-
-@{
+@{ 
     try
     {
         //parameters to send email
         string Email, FromOrSenderEmail = "fundernestcapstone@gmail.com", SubJect, Body;
 
         //Reading values from form collection (Querystring) and assigning values to parameters
-        Email = Request["Email"].ToString();
+        Email = Session["Email"].ToString();
         SubJect = "Thank You for Registering with FunderNest!";
         Body = "This email is to confirm that you have now registered to donate with FunderNest. Login now to auction or bid! ";
 
@@ -39,5 +37,8 @@
         }
     
 }
+
+
+
 
 

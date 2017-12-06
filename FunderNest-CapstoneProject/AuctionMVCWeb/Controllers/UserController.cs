@@ -41,11 +41,14 @@ namespace AuctionMVCWeb.Controllers
                     db.userInfo.Add(info);
                     db.SaveChanges();
                 }
+
                 ModelState.Clear();
-                return RedirectToAction("SendEmailView");
+
 
             }
-            return View();
+            Session["Email"] = info.Email.ToString();
+
+            return RedirectToAction("SendEmail");
         }
 
 
@@ -147,17 +150,9 @@ namespace AuctionMVCWeb.Controllers
             return Redirect("/Home/Index");
         }
 
-        [HttpPost]
-        public ActionResult SendEmailView()
+        public ActionResult SendEmail()
         {
-            if (Session["Email"] != null)
-            {
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Register");
-            }
+            return View();
         }
     }
 }
