@@ -258,8 +258,10 @@
     <Content Include="images\mainpage\hackimage.jpg" />
     <Content Include="images\mainpage\hackimage1.jpg" />
     <Content Include="images\mainpage\job.jpg" />
+    <Content Include="images\mainpage\jobInterview.jpg" />
     <Content Include="images\mainpage\missionstatimg.jpg" />
     <Content Include="images\mainpage\overfishing.jpg" />
+    <Content Include="images\mainpage\rocket.jpg" />
     <Content Include="images\rocket small.jpg" />
     <Content Include="index.htm" />
     <Content Include="Item.aspx" />
