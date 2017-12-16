@@ -42,7 +42,7 @@
                 <ul class="nav navbar-nav">
 
                     <li>
-                        <a href="/Home/Index">Home</a>
+                        <a href="/Home/Index">Hackernest</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right ">

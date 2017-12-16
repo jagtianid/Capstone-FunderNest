@@ -260,6 +260,7 @@
     <Content Include="images\mainpage\job.jpg" />
     <Content Include="images\mainpage\missionstatimg.jpg" />
     <Content Include="images\mainpage\overfishing.jpg" />
+    <Content Include="images\rocket small.jpg" />
     <Content Include="index.htm" />
     <Content Include="Item.aspx" />
     <Content Include="PDT\PDTStart.aspx" />

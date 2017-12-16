@@ -40,13 +40,16 @@
                         <a href="/Home/Index">Home</a>
 
                     </li>
+                </ul>
 
-                     <li>
+                <ul class="nav navbar-nav navbar-right ">
+
+                    <li>
                         <a href="/User/Logout">Logout</a>
 
                     </li>
-                 
 
+                    
                 </ul>
 
             </div>
@@ -103,7 +106,7 @@
                                     <asp:Label ID="lblHighBidder" runat="server"></asp:Label>
                                 </td>
                             </tr>
-                           
+
                         </table>
 
                     </td>
