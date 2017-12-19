@@ -13,10 +13,8 @@ namespace AuctionMVCWeb.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult IndexLoggedIn()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 

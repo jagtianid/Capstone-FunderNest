@@ -13,6 +13,15 @@ namespace AuctionMVCWeb {
     public partial class EndedBids {
         
         /// <summary>
+        /// Header1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AuctionMVCWeb.Header Header1;
+        
+        /// <summary>
         /// Form1 control.
         /// </summary>
         /// <remarks>

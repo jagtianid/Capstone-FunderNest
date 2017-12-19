@@ -154,5 +154,12 @@ namespace AuctionMVCWeb.Controllers
         {
             return View();
         }
+
+        public ActionResult LoginOptions()
+        {
+            return View();
+        }
+
+
     }
 }

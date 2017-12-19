@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EndedBids.aspx.cs" Inherits="AuctionMVCWeb.EndedBids" %>
+<%@ Register Src="Header.ascx" TagName="Header" TagPrefix="uc2" %>
 
 <!DOCTYPE html>
 
@@ -19,6 +20,9 @@
             font-size: 26pt;
             text-align: center;
         }
+        .ThemeColor{
+            width: 200px;
+        }
     </style>
 
 </head>
@@ -36,12 +40,14 @@
                 <ul class="nav navbar-nav">
 
                       <li>
-                        <a href="/Home/Index">Home</a>
+                        <a href="/Home/IndexLoggedIn">HackerNest</a>
                     </li>
+                    </ul>
 
+                 <ul class="nav navbar-nav navbar-right ">
                     <li>
                         <a href="/User/Logout">Logout</a>
-                    </li>
+                    </li>  
 
                 </ul>
 
@@ -50,6 +56,8 @@
     </div>
 
     <div class="PageLayout">
+                        <uc2:Header ID="Header1" runat="server" EnableViewState="false" />
+
         <table class="AuctionList">
             <tr class="ThemeColor" style="height: 35px;">
                 <td>

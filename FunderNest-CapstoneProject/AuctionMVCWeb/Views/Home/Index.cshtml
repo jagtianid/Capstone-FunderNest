@@ -11,7 +11,7 @@
     <link href="styles/styleMain.css" rel="stylesheet" type="text/css" />
 
     <style>
-        /* We have to change the color in this style element because it does not work in  external css*/
+
         h3 {
             color: orangered;
             text-align: center;
@@ -25,22 +25,50 @@
         p {
             text-align: justify;
         }
+
+        .imagewrap {
+            display: inline-block;
+            position: relative;
+        }
+
+        .loginbtn {
+            position: absolute;
+            top: 10%;
+            right: 15%;
+            background-color: transparent;
+            border-style: solid;
+            border-radius: 12px;
+            color: white;
+            font-size: 18px;
+        }
+
+        .signupbtn {
+            position: absolute;
+            top: 10%;
+            right: 6%;
+            background-color: transparent;
+            border-style: solid;
+            border-radius: 12px;
+            color: white;
+            font-size: 18px;
+        }
+
+        #hover:hover {
+            background-color: rgba(6, 6, 6, 6);
+        }
+
+       
     </style>
 
 </head>
 
 <body>
 
+    <div class="imagewrap">
+        <img src="~/images/mainpage/rocket.jpg" width="1120" height="400" >
 
-    <div class="container">
-
-
-        <div class="image">
-            <img src="~/images/mainpage/rocket.jpg" width="1120" height="400" />
-
-        </div>
-
-
+        <input type="button" class="loginbtn" value="Log in" id="hover" onclick="location.href='@Url.Action("LoginOptions", "User")'" /> 
+        <input type="button" class="signupbtn" value="Sign up" id="hover" onclick="location.href='@Url.Action("Register", "User")'"  />
     </div>
 
     <div class="row">

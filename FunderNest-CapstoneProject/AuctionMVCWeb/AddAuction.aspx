@@ -19,12 +19,18 @@
     <style type="text/css">
         td {
             width: 180px;
-            margin: auto;
+            margin: inherit;
+            padding-right: 360px;
         }
+
+     
 
         .auto-style1 {
             width: 288px;
         }
+
+
+
     </style>
 
 </head>
@@ -43,7 +49,7 @@
                 <ul class="nav navbar-nav">
 
                     <li>
-                        <a href="/Home/Index">Hackernest</a>
+                        <a href="/Home/IndexLoggedIn">HackerNest</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right ">

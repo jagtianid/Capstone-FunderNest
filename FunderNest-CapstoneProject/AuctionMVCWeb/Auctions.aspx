@@ -26,6 +26,11 @@
             font-family: 'Trebuchet MS';
             font-size: 18pt;
         }
+        themecolor{
+            height: 12px;
+        }
+
+        
     </style>
 </head>
 <body>
@@ -42,7 +47,7 @@
                 <ul class="nav navbar-nav">
 
                     <li>
-                        <a href="/Home/Index">Hackernest</a>
+                        <a href="/Home/IndexLoggedIn">HackerNest</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right ">
@@ -59,7 +64,7 @@
     <div class="PageLayout">
 
         <table class="AuctionList">
-            <tr class="ThemeColor" style="height: 35px;">
+            <tr class="ThemeColor" style="height: 35px;" id="themecolor">
                 <uc2:Header ID="Header1" runat="server" EnableViewState="false" />
 
                 <td>

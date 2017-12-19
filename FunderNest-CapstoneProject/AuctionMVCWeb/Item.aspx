@@ -37,7 +37,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="/Home/Index">Home</a>
+                        <a href="/Home/IndexLoggedIn">HackerNest</a>
 
                     </li>
                 </ul>

@@ -1,0 +1,122 @@
+﻿@{
+    ViewBag.Title = "Home Page after user has logged in";
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Charity Auction</title>
+    <link href="styles/styleMain.css" rel="stylesheet" type="text/css" />
+
+    <style>
+
+        h3 {
+            color: orangered;
+            text-align: center;
+            font-weight: bolder;
+        }
+
+        h3 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        .imagewrap {
+            display: inline-block;
+            position: relative;
+        }
+
+        .donatebtn {
+            position: absolute;
+            top: 10%;
+            right: 15%;
+            background-color: transparent;
+            border-style: solid;
+            border-radius: 12px;
+            color: white;
+            font-size: 18px;
+        }
+
+        .bidbtn {
+            position: absolute;
+            top: 10%;
+            right: 6%;
+            background-color: transparent;
+            border-style: solid;
+            border-radius: 12px;
+            color: white;
+            font-size: 18px;
+        }
+
+        #hover:hover {
+            background-color: rgba(6, 6, 6, 6);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="imagewrap">
+        <img src="~/images/mainpage/rocket.jpg" width="1120" height="400">
+
+        <input type="button" class="donatebtn" value="Donate Item" id="hover" onclick="location.href='@Url.Action("addAuction", "DementiaHackathon")'" />
+        <input type="button" class="bidbtn" value="Bid Now" id="hover" onclick="location.href='@Url.Action("auction", "DementiaHackathon")'" />
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Our Mission</h2>
+            <h5>We build awesome local tech communities around the world</h5>
+            <p>
+                HackerNest is an international nonprofit organization that produces unpretentious tech socials,
+                blockbuster hackathons, and other projects that unite technologists to advanced
+                technology, humanity, and economic prosperity.
+
+            </p>
+            <br />
+            <br />
+            <img src="~/images/mainpage/missionstatimg.jpg" />
+
+        </div>
+        <div class="col-md-4">
+            <h2>Careers</h2>
+            <p>
+                Our product showcase and career events complement the community-centric Tech Social
+                as a meeting point for all. Innovative technology companies show our audience what
+                they’ve built, the great people behind them, and the kinds of people they want to hire.
+                Talented technologists get to meet organizations they gel with for their next career move.
+
+            </p>
+            <p><a href="https://hackernest.com/jobs" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
+
+            <img src="~/images/mainpage/jobInterview.jpg" />
+        </div>
+        <div class="col-md-4">
+            <h2>Epic Hackathons</h2>
+            <p>
+
+                <b>Dementia Hack</b>
+                The world’s largest and foremost dementia hackathon focuses on getting life-improving products
+                into the hands of people with dementia and their caregivers.
+            </p>
+            <p><a href="http://about.hackernest.com/#hackathons" class="btn btn-primary btn-md">Get Involved &raquo;</a></p>
+
+            <p>
+                <b>Fishackathon</b>
+                The world’s largest and foremost dementia hackathon focuses on getting life-improving products
+                into the hands of people with dementia and their caregivers.
+            </p>
+
+            <p><a href="http://fishackathon.hackernest.com/" class="btn btn-primary btn-md">Get Involved &raquo;</a></p>
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Developed By TechPro</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -19,23 +19,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Hackernest", "Index", "Home")</li>
+                    <li>@Html.ActionLink("HackerNest", "IndexLoggedIn", "Home")</li>
                     </ul>
-
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle " data-toggle="dropdown">Members<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Log In", "Login", "User")</li>
-                            <li>@Html.ActionLink("Login as Admin", "LoginAdmin", "User")</li>
-                            <li>@Html.ActionLink("Create Account", "Register", "User")</li>
-                            <li>@Html.ActionLink("Logout", "Logout", "User")</li>
-
-
-                        </ul>
-                    </li>
-                </ul>
-
             </div>
         </div>
     </div>
@@ -43,7 +28,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Developed by TechPro</p>
         </footer>
     </div>
 
