@@ -19,16 +19,17 @@
     <style type="text/css">
         td {
             width: 180px;
-            margin: inherit;
-            padding-right: 360px;
+            margin: auto;
         }
-
-     
 
         .auto-style1 {
             width: 288px;
         }
 
+        cont {
+            padding-right: 790px;
+            margin: auto;
+        }
 
 
     </style>
@@ -63,110 +64,115 @@
             </div>
         </div>
     </div>
+    <div class="container" id="cont">
 
-    <form id="Form1" method="post" runat="server">
 
-        <uc2:Header ID="Header1" runat="server" EnableViewState="false" />
-        <h1>Add Donation 
-        </h1>
-        <p>
-        </p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</p>
+        <form id="Form1" method="post" runat="server">
 
-        <table id="Table1" border="0" cellpadding="5" cellspacing="5">
+            <uc2:Header ID="Header1" runat="server" EnableViewState="false" />
+            <h1>Add Donation 
+            </h1>
+            <p>
+            </p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</p>
 
-            <tr>
-                <td>
-                    <br />
-                    <br />
-                </td>
-                <td style="height: 27px">
-                    <asp:Literal runat="server" ID="litHeader">
-                    </asp:Literal>
+            <table id="Table1" border="0" cellpadding="5" cellspacing="5">
 
-                    <asp:Literal runat="server" ID="litHeader2">
-                    </asp:Literal>
+                <tr>
+                    <td>
+                        <br />
+                        <br />
+                    </td>
+                    <td style="height: 27px">
+                        <asp:Literal runat="server" ID="litHeader">
+                        </asp:Literal>
 
-                    <h3>Item Name</h3>
+                        <asp:Literal runat="server" ID="litHeader2">
+                        </asp:Literal>
 
-                    <asp:TextBox ID="txtName1" runat="server" Width="408px"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
-                        ControlToValidate="txtName1" ErrorMessage="Missing name"></asp:RequiredFieldValidator>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <h3>Item Description</h3>
+                        <h3>Item Name</h3>
 
-                    <asp:TextBox ID="txtDescription" runat="server" Width="408px" Height="136px" MaxLength="1000"
-                        TextMode="MultiLine"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
-                        ControlToValidate="txtDescription" ErrorMessage="Missing description"></asp:RequiredFieldValidator>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <h3>Category</h3>
+                        <asp:TextBox ID="txtName1" runat="server" Width="408px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                            ControlToValidate="txtName1" ErrorMessage="Missing name"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <h3>Item Description</h3>
 
-                    <asp:DropDownList ID="DropDownList1" runat="server">
-                    </asp:DropDownList></td>
+                        <asp:TextBox ID="txtDescription" runat="server" Width="408px" Height="136px" MaxLength="1000"
+                            TextMode="MultiLine"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
+                            ControlToValidate="txtDescription" ErrorMessage="Missing description"></asp:RequiredFieldValidator>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <h3>Category</h3>
 
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <h3 class="auto-style1">Seller Name </h3>
+                        <asp:DropDownList ID="DropDownList1" runat="server">
+                        </asp:DropDownList></td>
 
-                    &nbsp;<asp:Label ID="lbFName" runat="server" Text="First Name"></asp:Label>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <h3 class="auto-style1">Seller Name </h3>
 
-                    <asp:Label ID="lbLName" runat="server" Text="Last Name"></asp:Label>
+                        &nbsp;<asp:Label ID="lbFName" runat="server" Text="First Name"></asp:Label>
 
-                    <h3 class="auto-style1">Seller Email</h3>
-                    <p class="auto-style1">
+                        <asp:Label ID="lbLName" runat="server" Text="Last Name"></asp:Label>
 
-                        <asp:Label ID="lbEmail" runat="server" Text="Email Address"></asp:Label>
+                        <h3 class="auto-style1">Seller Email</h3>
+                        <p class="auto-style1">
 
-                    </p>
+                            <asp:Label ID="lbEmail" runat="server" Text="Email Address"></asp:Label>
 
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <h3>Auction close date&nbsp;and time</h3>
-                    <asp:Calendar ID="Calendar1" runat="server" Width="240px" ShowGridLines="True"></asp:Calendar>
-                    <p>
-                        Time (24h)
+                        </p>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <h3>Auction close date&nbsp;and time</h3>
+                        <asp:Calendar ID="Calendar1" runat="server" Width="240px" ShowGridLines="True"></asp:Calendar>
+                        <p>
+                            Time (24h)
 							<asp:TextBox ID="txtTime" runat="server" Width="128px">14:00</asp:TextBox>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <h3>Image</h3>
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <h3>Image</h3>
 
-                    <asp:FileUpload ID="FileUpload1" runat="server" Width="405px" /><asp:RegularExpressionValidator ID="rexp" runat="server" ControlToValidate="FileUpload1"
-                        ErrorMessage="Only .gif, .jpg, .png, .tiff and .jpeg" ValidationExpression="(.*\.([Gg][Ii][Ff])|.*\.([Jj][Pp][Gg])|.*\.([Bb][Mm][Pp])|.*\.([pP][nN][gG])|.*\.([tT][iI][iI][fF])$)"></asp:RegularExpressionValidator>
-                    <br />
-                    Leave blank if no image </td>
-            </tr>
-            <tr>
-                <td valign="top"></td>
-                <td align="right">&nbsp;</td>
-            </tr>
-            <tr>
-                <td valign="top">&nbsp;</td>
-                <td align="right">
-                    <asp:Button ID="Button1" runat="server" Text="Save Auction" OnClick="Button1_Click"></asp:Button></td>
-            </tr>
-        </table>
+                        <asp:FileUpload ID="FileUpload1" runat="server" Width="405px" /><asp:RegularExpressionValidator ID="rexp" runat="server" ControlToValidate="FileUpload1"
+                            ErrorMessage="Only .gif, .jpg, .png, .tiff and .jpeg" ValidationExpression="(.*\.([Gg][Ii][Ff])|.*\.([Jj][Pp][Gg])|.*\.([Bb][Mm][Pp])|.*\.([pP][nN][gG])|.*\.([tT][iI][iI][fF])$)"></asp:RegularExpressionValidator>
+                        <br />
+                        Leave blank if no image </td>
+                </tr>
+                <tr>
+                    <td valign="top"></td>
+                    <td align="right">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td valign="top">&nbsp;</td>
+                    <td align="right">
+                        <asp:Button ID="Button1" runat="server" Text="Save Auction" OnClick="Button1_Click"></asp:Button></td>
+                </tr>
 
-    </form>
+            </table>
+
+        </form>
+
+    </div>
 </body>
 </html>
