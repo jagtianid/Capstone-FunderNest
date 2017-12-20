@@ -31,6 +31,13 @@
             margin: auto;
         }
 
+        h1{
+            color: darkslategray;
+        }
+
+        h3{
+            color: orangered;
+        }
 
     </style>
 

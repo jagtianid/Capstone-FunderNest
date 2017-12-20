@@ -160,6 +160,11 @@ namespace AuctionMVCWeb.Controllers
             return View();
         }
 
+        public ActionResult EndedBids()
+        {
+            return Redirect("~/EndedBids.aspx");
+        }
+
 
     }
 }

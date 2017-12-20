@@ -365,6 +365,10 @@
     <Content Include="Views\User\LoginOptions.cshtml" />
     <Content Include="Views\User\AdminLoggedIn.cshtml" />
     <Content Include="Views\Home\IndexLoggedIn.cshtml" />
+    <Content Include="Views\Home\IndexAdmin.cshtml" />
+    <Content Include="Views\User\EndedBids.cshtml" />
+    <Content Include="Views\Shared\_Layout3.cshtml" />
+    <Content Include="Views\Shared\_Layout4.cshtml" />
     <None Include="Web References\com.paypal.sandbox.www\CoreComponentTypes.xsd">
       <SubType>Designer</SubType>
     </None>

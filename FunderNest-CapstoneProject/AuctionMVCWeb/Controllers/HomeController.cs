@@ -17,7 +17,10 @@ namespace AuctionMVCWeb.Controllers
         {
             return View();
         }
-
+        public ActionResult IndexAdmin()
+        {
+            return View();
+        }
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
@@ -25,8 +28,8 @@ namespace AuctionMVCWeb.Controllers
             return View();
         }
 
-    
 
-      
+
+
     }
 }

@@ -40,7 +40,7 @@
                 <ul class="nav navbar-nav">
 
                       <li>
-                        <a href="/Home/IndexLoggedIn">HackerNest</a>
+                        <a href="/Home/IndexAdmin">HackerNest</a>
                     </li>
                     </ul>
 
