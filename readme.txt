@@ -1,7 +1,5 @@
 Team Name: TechPro
 
-Team Members: Dyllis Luk, Divya Jagtiani and Michelle Samai-Chattergoon
-
 Mission: To help HackerNest but more specifically, DementiaHack with donating items for those struggling with Dementia.
 
 This submission consists of the overall working components and the graphic user interface for our project. 
